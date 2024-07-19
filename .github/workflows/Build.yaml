@@ -88,7 +88,7 @@ jobs:
       - name: "Cache generated TeX builds"
         uses: actions/cache@v4.0.2
         with:
-          path: code/build/**/PDF/
+          path: code/build/**/**/PDF/
           key: ${{ runner.os }}-tex-${{ hashFiles('code/build/**/*.tex') }}
           restore-keys: |
             ${{ runner.os }}-tex-
