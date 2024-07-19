@@ -85,10 +85,10 @@ jobs:
       - name: "Compile GOOL examples"
         run: make codegenTest
 
-      - name: "Cache TeX files"
+      - name: "Cache generated TeX builds"
         uses: actions/cache@v4.0.2
         with:
-          path: code/build/**/*.tex
+          path: code/build/**/PDF
           key: ${{ runner.os }}-tex-${{ hashFiles('code/build/**/*.tex') }}
           restore-keys: |
             ${{ runner.os }}-tex-
