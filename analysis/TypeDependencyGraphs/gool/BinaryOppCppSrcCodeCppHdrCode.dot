@@ -1,0 +1,4 @@
+digraph binaryoppcppsrccodecpphdrcode{
+BinaryOppCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="BinaryOppCppSrcCodeCppHdrCode"];
+BinaryOppCppSrcCodeCppHdrCode -> OpData;
+}

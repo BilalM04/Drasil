@@ -1,0 +1,9 @@
+digraph datadefinition{
+DataDefinition	[shape=oval, color=darkviolet, label="DataDefinition"];
+DataDefinition -> SimpleQDef;
+DataDefinition -> DDPkt;
+DataDefinition -> DataDefinition;
+DataDefinition -> ModelQDef;
+DataDefinition -> Lens_;
+DataDefinition -> a;
+}

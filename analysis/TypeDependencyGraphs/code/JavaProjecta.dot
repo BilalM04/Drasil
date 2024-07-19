@@ -1,0 +1,4 @@
+digraph javaprojecta{
+JavaProjecta	[shape=oval, color=darkgreen, label="JavaProjecta"];
+JavaProjecta -> a;
+}

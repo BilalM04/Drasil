@@ -1,0 +1,4 @@
+digraph dockind{
+DocKind	[shape=oval, color=red2, label="DocKind"];
+DocKind -> Sentence;
+}

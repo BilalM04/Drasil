@@ -1,0 +1,4 @@
+digraph blockcommentswiftcode{
+BlockCommentSwiftCode	[shape=oval, color=red2, label="BlockCommentSwiftCode"];
+BlockCommentSwiftCode -> Doc;
+}

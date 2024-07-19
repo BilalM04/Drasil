@@ -1,0 +1,29 @@
+digraph drasilstate{
+DrasilState	[shape=oval, color=cyan3, label="DrasilState"];
+DrasilState -> CodeSpec;
+DrasilState -> Modularity;
+DrasilState -> ImplementationType;
+DrasilState -> Structure;
+DrasilState -> ConstantStructure;
+DrasilState -> ConstantRepr;
+DrasilState -> MatchedConceptMap;
+DrasilState -> MatchedSpaces;
+DrasilState -> ConstraintBehaviour;
+DrasilState -> Comments;
+DrasilState -> Verbosity;
+DrasilState -> String;
+DrasilState -> Logging;
+DrasilState -> AuxFile;
+DrasilState -> Expr;
+DrasilState -> InternalConceptName;
+DrasilState -> Mod;
+DrasilState -> Name;
+DrasilState -> ExtLibMap;
+DrasilState -> FilePath;
+DrasilState -> ModExportMap;
+DrasilState -> ClassDefinitionMap;
+DrasilState -> SetName;
+DrasilState -> Int;
+DrasilState -> Doc;
+DrasilState -> Space;
+}

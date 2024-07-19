@@ -1,0 +1,54 @@
+digraph alltypes {
+	subgraph computation {
+	}
+	subgraph documentation {
+	}
+	subgraph education {
+	}
+	subgraph math {
+	}
+	subgraph pyicalpropertieshs {
+	}
+	subgraph pyicshs {
+	}
+	subgraph software {
+	}
+	subgraph solidmecanichs {
+	}
+	subgraph termodynamichs {
+	}
+	subgraph derivations {
+	}
+	subgraph pyicshs {
+	}
+	subgraph math {
+	}
+	subgraph pyicalpropertieshs {
+	}
+	subgraph pyicshs {
+	}
+	subgraph solidmecanichs {
+	}
+	subgraph termodynamichs {
+	}
+	subgraph products {
+	}
+	subgraph pyicshs {
+	}
+	subgraph pyicalpropertieshs {
+	}
+	subgraph pyicshs {
+	}
+	subgraph solidmecanichs {
+	}
+	subgraph termodynamichs {
+	}
+	subgraph citations {
+	}
+	subgraph contraintss {
+	}
+	subgraph people {
+	}
+	subgraph si_units {
+	}
+}

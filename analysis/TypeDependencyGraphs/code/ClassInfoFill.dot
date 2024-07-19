@@ -1,0 +1,4 @@
+digraph classinfofill{
+ClassInfoFill	[shape=oval, color=darkviolet, label="ClassInfoFill"];
+ClassInfoFill -> MethodInfoFill;
+}

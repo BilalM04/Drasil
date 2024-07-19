@@ -1,0 +1,4 @@
+digraph blockcommentcsharpcode{
+BlockCommentCSharpCode	[shape=oval, color=red2, label="BlockCommentCSharpCode"];
+BlockCommentCSharpCode -> Doc;
+}

@@ -1,0 +1,4 @@
+digraph classpythoncode{
+ClassPythonCode	[shape=oval, color=red2, label="ClassPythonCode"];
+ClassPythonCode -> Doc;
+}

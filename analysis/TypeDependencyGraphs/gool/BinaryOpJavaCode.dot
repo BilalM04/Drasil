@@ -1,0 +1,4 @@
+digraph binaryopjavacode{
+BinaryOpJavaCode	[shape=oval, color=red2, label="BinaryOpJavaCode"];
+BinaryOpJavaCode -> OpData;
+}

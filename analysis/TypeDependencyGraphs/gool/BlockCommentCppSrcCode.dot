@@ -1,0 +1,4 @@
+digraph blockcommentcppsrccode{
+BlockCommentCppSrcCode	[shape=oval, color=red2, label="BlockCommentCppSrcCode"];
+BlockCommentCppSrcCode -> Doc;
+}

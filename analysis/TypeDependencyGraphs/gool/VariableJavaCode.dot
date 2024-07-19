@@ -1,0 +1,4 @@
+digraph variablejavacode{
+VariableJavaCode	[shape=oval, color=red2, label="VariableJavaCode"];
+VariableJavaCode -> VarData;
+}

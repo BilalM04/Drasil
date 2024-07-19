@@ -1,0 +1,4 @@
+digraph spacematch{
+SpaceMatch	[shape=oval, color=red2, label="SpaceMatch"];
+SpaceMatch -> SpaceCodeType;
+}

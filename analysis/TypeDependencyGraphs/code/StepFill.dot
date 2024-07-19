@@ -1,0 +1,8 @@
+digraph stepfill{
+StepFill	[shape=oval, color=darkviolet, label="StepFill"];
+StepFill -> FunctionIntFill;
+StepFill -> NonEmpty;
+StepFill -> CodeExpr;
+StepFill -> StepFill;
+StepFill -> CodeVarChunk;
+}

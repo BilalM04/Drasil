@@ -1,0 +1,4 @@
+digraph swiftcodea{
+SwiftCodea	[shape=oval, color=darkgreen, label="SwiftCodea"];
+SwiftCodea -> a;
+}

@@ -1,0 +1,4 @@
+digraph statevarcsharpcode{
+StateVarCSharpCode	[shape=oval, color=red2, label="StateVarCSharpCode"];
+StateVarCSharpCode -> Doc;
+}

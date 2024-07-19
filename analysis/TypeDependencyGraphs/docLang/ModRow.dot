@@ -1,0 +1,4 @@
+digraph modrow{
+ModRow	[shape=oval, color=red2, label="ModRow"];
+ModRow -> StringContents;
+}

@@ -1,0 +1,10 @@
+digraph gendefn{
+GenDefn	[shape=oval, color=cyan3, label="GenDefn"];
+GenDefn -> ModelKindModelExpr;
+GenDefn -> MaybeUnitDefn;
+GenDefn -> MaybeDerivation;
+GenDefn -> DecRef;
+GenDefn -> ShortName;
+GenDefn -> String;
+GenDefn -> Sentence;
+}

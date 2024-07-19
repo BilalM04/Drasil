@@ -1,0 +1,41 @@
+digraph alltypes {
+	subgraph main {
+	}
+	subgraph about {
+	}
+	subgraph analyiss {
+	}
+	subgraph body {
+		subgraph folderlocation{
+		FolderLocation	[shape=oval, color=cyan3, label="FolderLocation"];
+		FolderLocation -> FilePath;
+		FolderLocation -> String;
+		}
+	}
+	subgraph caestudys {
+		subgraph casestudy{
+		CaseStudy	[shape=oval, color=cyan3, label="CaseStudy"];
+		CaseStudy -> SystemInformation;
+		CaseStudy -> Sentence;
+		CaseStudy -> Choices;
+		}
+		subgraph cslegend{
+		CSLegend	[shape=oval, color=cyan3, label="CSLegend"];
+		CSLegend -> String;
+		}
+	}
+	subgraph documentation {
+	}
+	subgraph example {
+		subgraph example{
+		Example	[shape=oval, color=cyan3, label="Example"];
+		Example -> SystemInformation;
+		Example -> Choices;
+		Example -> FilePath;
+		}
+	}
+	subgraph gettingstarted {
+	}
+	subgraph introduction {
+	}
+}

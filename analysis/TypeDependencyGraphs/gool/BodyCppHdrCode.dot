@@ -1,0 +1,4 @@
+digraph bodycpphdrcode{
+BodyCppHdrCode	[shape=oval, color=red2, label="BodyCppHdrCode"];
+BodyCppHdrCode -> Doc;
+}

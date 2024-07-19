@@ -1,0 +1,866 @@
+digraph alltypes {
+	subgraph odelibraries {
+	}
+	subgraph code {
+	}
+	subgraph codebaes {
+	}
+	subgraph codedefinition {
+		subgraph definitiontype{
+		DefinitionType	[shape=oval, color=cyan3, label="DefinitionType"];
+		DefinitionType -> CodeChunk;
+		DefinitionType -> CodeExpr;
+		DefinitionType -> DefinitionType;
+		}
+	}
+	subgraph contraintmaps {
+		subgraph constraintce{
+		ConstraintCE	[shape=oval, color=red2, label="ConstraintCE"];
+		ConstraintCE -> ConstraintCodeExpr;
+		}
+		subgraph constraintcemap{
+		ConstraintCEMap	[shape=oval, color=red2, label="ConstraintCEMap"];
+		ConstraintCEMap -> MapUIDConstraintCE;
+		}
+	}
+	subgraph namedargument {
+		subgraph namedargument{
+		NamedArgument	[shape=oval, color=darkgreen, label="NamedArgument"];
+		NamedArgument -> QuantityDict;
+		}
+	}
+	subgraph parameter {
+		subgraph passby{
+		PassBy	[shape=oval, color=cyan3, label="PassBy"];
+		PassBy -> CodeChunk;
+		PassBy -> PassBy;
+		}
+	}
+	subgraph ast {
+		subgraph docconfig{
+		DocConfig	[shape=oval, color=cyan3, label="DocConfig"];
+		DocConfig -> String;
+		DocConfig -> Bool;
+		}
+		subgraph buildname{
+		BuildName	[shape=oval, color=darkviolet, label="BuildName"];
+		BuildName -> BuildName;
+		BuildName -> Ext;
+		}
+		subgraph ext{
+		Ext	[shape=oval, color=darkviolet, label="Ext"];
+		Ext -> MakeString;
+		}
+		subgraph builddependencies{
+		BuildDependencies	[shape=oval, color=darkviolet, label="BuildDependencies"];
+		BuildDependencies -> BuildName;
+		}
+		subgraph buildconfig{
+		BuildConfig	[shape=oval, color=darkviolet, label="BuildConfig"];
+		}
+		subgraph runtype{
+		RunType	[shape=oval, color=darkviolet, label="RunType"];
+		RunType -> CommandFragment;
+		}
+		subgraph runnable{
+		Runnable	[shape=oval, color=darkviolet, label="Runnable"];
+		Runnable -> BuildName;
+		Runnable -> NameOpts;
+		Runnable -> RunType;
+		}
+		subgraph commandfragment{
+		CommandFragment	[shape=oval, color=red2, label="CommandFragment"];
+		CommandFragment -> MakeString;
+		}
+		subgraph buildcommand{
+		BuildCommand	[shape=oval, color=red2, label="BuildCommand"];
+		BuildCommand -> CommandFragment;
+		}
+		subgraph interpretercommand{
+		InterpreterCommand	[shape=oval, color=red2, label="InterpreterCommand"];
+		InterpreterCommand -> String;
+		}
+		subgraph interpreteroption{
+		InterpreterOption	[shape=oval, color=red2, label="InterpreterOption"];
+		InterpreterOption -> String;
+		}
+	}
+	subgraph import {
+		subgraph codeharness{
+		CodeHarness	[shape=oval, color=cyan3, label="CodeHarness"];
+		CodeHarness -> MaybeBuildConfig;
+		CodeHarness -> MaybeRunnable;
+		CodeHarness -> GOOLState;
+		CodeHarness -> ProgData;
+		CodeHarness -> MaybeDocConfig;
+		}
+	}
+	subgraph import {
+		subgraph optimizechoice{
+		OptimizeChoice	[shape=oval, color=red2, label="OptimizeChoice"];
+		OptimizeChoice -> Doc;
+		}
+		subgraph projname{
+		ProjName	[shape=oval, color=red2, label="ProjName"];
+		ProjName -> String;
+		}
+	}
+	subgraph csarprendererh {
+		subgraph csharpprojecta{
+		CSharpProjecta	[shape=oval, color=darkgreen, label="CSharpProjecta"];
+		CSharpProjecta -> a;
+		}
+		subgraph packagecsharpproject{
+		PackageCSharpProject	[shape=oval, color=red2, label="PackageCSharpProject"];
+		PackageCSharpProject -> PackData;
+		}
+		subgraph auxiliarycsharpproject{
+		AuxiliaryCSharpProject	[shape=oval, color=red2, label="AuxiliaryCSharpProject"];
+		AuxiliaryCSharpProject -> AuxData;
+		}
+		subgraph auxhelpercsharpproject{
+		AuxHelperCSharpProject	[shape=oval, color=red2, label="AuxHelperCSharpProject"];
+		AuxHelperCSharpProject -> Doc;
+		}
+	}
+	subgraph cpprenderer {
+		subgraph cppprojecta{
+		CppProjecta	[shape=oval, color=darkgreen, label="CppProjecta"];
+		CppProjecta -> a;
+		}
+		subgraph packagecppproject{
+		PackageCppProject	[shape=oval, color=red2, label="PackageCppProject"];
+		PackageCppProject -> PackData;
+		}
+		subgraph auxiliarycppproject{
+		AuxiliaryCppProject	[shape=oval, color=red2, label="AuxiliaryCppProject"];
+		AuxiliaryCppProject -> AuxData;
+		}
+		subgraph auxhelpercppproject{
+		AuxHelperCppProject	[shape=oval, color=red2, label="AuxHelperCppProject"];
+		AuxHelperCppProject -> Doc;
+		}
+	}
+	subgraph javarenderer {
+		subgraph javaprojecta{
+		JavaProjecta	[shape=oval, color=darkgreen, label="JavaProjecta"];
+		JavaProjecta -> a;
+		}
+		subgraph packagejavaproject{
+		PackageJavaProject	[shape=oval, color=red2, label="PackageJavaProject"];
+		PackageJavaProject -> PackData;
+		}
+		subgraph auxiliaryjavaproject{
+		AuxiliaryJavaProject	[shape=oval, color=red2, label="AuxiliaryJavaProject"];
+		AuxiliaryJavaProject -> AuxData;
+		}
+		subgraph auxhelperjavaproject{
+		AuxHelperJavaProject	[shape=oval, color=red2, label="AuxHelperJavaProject"];
+		AuxHelperJavaProject -> Doc;
+		}
+	}
+	subgraph languagepolymorpich {
+	}
+	subgraph pytonrendererh {
+		subgraph pythonprojecta{
+		PythonProjecta	[shape=oval, color=darkgreen, label="PythonProjecta"];
+		PythonProjecta -> a;
+		}
+		subgraph packagepythonproject{
+		PackagePythonProject	[shape=oval, color=red2, label="PackagePythonProject"];
+		PackagePythonProject -> PackData;
+		}
+		subgraph auxiliarypythonproject{
+		AuxiliaryPythonProject	[shape=oval, color=red2, label="AuxiliaryPythonProject"];
+		AuxiliaryPythonProject -> AuxData;
+		}
+		subgraph auxhelperpythonproject{
+		AuxHelperPythonProject	[shape=oval, color=red2, label="AuxHelperPythonProject"];
+		AuxHelperPythonProject -> Doc;
+		}
+	}
+	subgraph swiftrenderer {
+		subgraph swiftprojecta{
+		SwiftProjecta	[shape=oval, color=darkgreen, label="SwiftProjecta"];
+		SwiftProjecta -> a;
+		}
+		subgraph packageswiftproject{
+		PackageSwiftProject	[shape=oval, color=red2, label="PackageSwiftProject"];
+		PackageSwiftProject -> PackData;
+		}
+		subgraph auxiliaryswiftproject{
+		AuxiliarySwiftProject	[shape=oval, color=red2, label="AuxiliarySwiftProject"];
+		AuxiliarySwiftProject -> AuxData;
+		}
+		subgraph auxhelperswiftproject{
+		AuxHelperSwiftProject	[shape=oval, color=red2, label="AuxHelperSwiftProject"];
+		AuxHelperSwiftProject -> Doc;
+		}
+	}
+	subgraph clasinterfaces {
+		subgraph readmeinfo{
+		ReadMeInfo	[shape=oval, color=cyan3, label="ReadMeInfo"];
+		ReadMeInfo -> LangAbbrev;
+		ReadMeInfo -> LangVers;
+		ReadMeInfo -> MaybeString;
+		ReadMeInfo -> ImplementationType;
+		ReadMeInfo -> Name;
+		ReadMeInfo -> FilePath;
+		ReadMeInfo -> Contributor;
+		ReadMeInfo -> CaseName;
+		ReadMeInfo -> ExamplePurpose;
+		ReadMeInfo -> ExampleDescr;
+		ReadMeInfo -> Int;
+		ReadMeInfo -> InFile;
+		}
+		subgraph langabbrev{
+		LangAbbrev	[shape=oval, color=red2, label="LangAbbrev"];
+		LangAbbrev -> String;
+		}
+		subgraph langvers{
+		LangVers	[shape=oval, color=red2, label="LangVers"];
+		LangVers -> String;
+		}
+		subgraph casename{
+		CaseName	[shape=oval, color=red2, label="CaseName"];
+		CaseName -> String;
+		}
+		subgraph examplepurpose{
+		ExamplePurpose	[shape=oval, color=red2, label="ExamplePurpose"];
+		ExamplePurpose -> String;
+		}
+		subgraph exampledescr{
+		ExampleDescr	[shape=oval, color=red2, label="ExampleDescr"];
+		ExampleDescr -> String;
+		}
+		subgraph contributor{
+		Contributor	[shape=oval, color=red2, label="Contributor"];
+		Contributor -> String;
+		}
+		subgraph infile{
+		InFile	[shape=oval, color=red2, label="InFile"];
+		InFile -> String;
+		}
+		subgraph outfile{
+		OutFile	[shape=oval, color=red2, label="OutFile"];
+		OutFile -> String;
+		}
+	}
+	subgraph data {
+		subgraph auxdata{
+		AuxData	[shape=oval, color=cyan3, label="AuxData"];
+		AuxData -> FilePath;
+		AuxData -> Doc;
+		}
+		subgraph packdata{
+		PackData	[shape=oval, color=cyan3, label="PackData"];
+		PackData -> ProgData;
+		PackData -> AuxData;
+		}
+	}
+	subgraph languagerenderer {
+	}
+	subgraph configparers {
+		subgraph configuration{
+		Configuration	[shape=oval, color=cyan3, label="Configuration"];
+		Configuration -> String;
+		Configuration -> MaybeString;
+		Configuration -> Options;
+		}
+	}
+	subgraph comments {
+	}
+	subgraph conceptmatch {
+	}
+	subgraph decriptionss {
+	}
+	subgraph drailstates {
+		subgraph drasilstate{
+		DrasilState	[shape=oval, color=cyan3, label="DrasilState"];
+		DrasilState -> CodeSpec;
+		DrasilState -> Modularity;
+		DrasilState -> ImplementationType;
+		DrasilState -> Structure;
+		DrasilState -> ConstantStructure;
+		DrasilState -> ConstantRepr;
+		DrasilState -> MatchedConceptMap;
+		DrasilState -> MatchedSpaces;
+		DrasilState -> ConstraintBehaviour;
+		DrasilState -> Comments;
+		DrasilState -> Verbosity;
+		DrasilState -> String;
+		DrasilState -> Logging;
+		DrasilState -> AuxFile;
+		DrasilState -> Expr;
+		DrasilState -> InternalConceptName;
+		DrasilState -> Mod;
+		DrasilState -> Name;
+		DrasilState -> ExtLibMap;
+		DrasilState -> FilePath;
+		DrasilState -> ModExportMap;
+		DrasilState -> ClassDefinitionMap;
+		DrasilState -> SetName;
+		DrasilState -> Int;
+		DrasilState -> Doc;
+		DrasilState -> Space;
+		}
+		subgraph matchedspaces{
+		MatchedSpaces	[shape=oval, color=red2, label="MatchedSpaces"];
+		MatchedSpaces -> SpaceGenStateCodeType;
+		}
+		subgraph extlibmap{
+		ExtLibMap	[shape=oval, color=red2, label="ExtLibMap"];
+		ExtLibMap -> MapStringExtLibState;
+		}
+		subgraph modexportmap{
+		ModExportMap	[shape=oval, color=red2, label="ModExportMap"];
+		ModExportMap -> MapStringString;
+		}
+		subgraph classdefinitionmap{
+		ClassDefinitionMap	[shape=oval, color=red2, label="ClassDefinitionMap"];
+		ClassDefinitionMap -> MapStringString;
+		}
+		subgraph genstate{
+		GenState	[shape=oval, color=red2, label="GenState"];
+		GenState -> StateDrasilState;
+		}
+		subgraph modexp{
+		ModExp	[shape=oval, color=red2, label="ModExp"];
+		ModExp -> StringString;
+		}
+		subgraph classdef{
+		ClassDef	[shape=oval, color=red2, label="ClassDef"];
+		ClassDef -> StringString;
+		}
+	}
+	subgraph functioncalls {
+	}
+	subgraph genode {
+		subgraph odegeninfo{
+		ODEGenInfo	[shape=oval, color=red2, label="ODEGenInfo"];
+		ODEGenInfo -> MaybeFilePathNameExtLibStateNameVersion;
+		}
+	}
+	subgraph generategool {
+		subgraph classtype{
+		ClassType	[shape=oval, color=darkviolet, label="ClassType"];
+		ClassType -> OOProg;
+		ClassType -> r;
+		ClassType -> ClassType;
+		ClassType -> Name;
+		ClassType -> Maybe;
+		ClassType -> Description;
+		}
+	}
+	subgraph generator {
+	}
+	subgraph helpers {
+	}
+	subgraph import {
+	}
+	subgraph logging {
+	}
+	subgraph modules {
+		subgraph calctype{
+		CalcType	[shape=oval, color=darkviolet, label="CalcType"];
+		CalcType -> OOProg;
+		CalcType -> r;
+		CalcType -> CalcType;
+		CalcType -> CodeDefinition;
+		CalcType -> CodeExpr;
+		}
+		subgraph constraintce{
+		ConstraintCE	[shape=oval, color=red2, label="ConstraintCE"];
+		ConstraintCE -> ConstraintCodeExpr;
+		}
+	}
+	subgraph parameters {
+		subgraph paramtype{
+		ParamType	[shape=oval, color=darkviolet, label="ParamType"];
+		ParamType -> ParamType;
+		ParamType -> Bool;
+		}
+	}
+	subgraph readinput {
+	}
+	subgraph spacematch {
+	}
+	subgraph writeinput {
+	}
+	subgraph writereadme {
+	}
+	subgraph code {
+		subgraph code{
+		Code	[shape=oval, color=darkgreen, label="Code"];
+		Code -> FilePath;
+		}
+	}
+	subgraph codegeneration {
+	}
+	subgraph codequantitydicts {
+	}
+	subgraph datadecs {
+		subgraph datadesc_{
+		DataDesc_	[shape=oval, color=darkviolet, label="DataDesc_"];
+		DataDesc_ -> Data_;
+		DataDesc_ -> Delimiter;
+		DataDesc_ -> DataDesc_;
+		}
+		subgraph data_{
+		Data_	[shape=oval, color=darkviolet, label="Data_"];
+		Data_ -> DataItem_;
+		}
+		subgraph dataitem_{
+		DataItem_	[shape=oval, color=darkviolet, label="DataItem_"];
+		}
+		subgraph data{
+		Data	[shape=oval, color=darkviolet, label="Data"];
+		Data -> DataItem;
+		}
+		subgraph linepattern{
+		LinePattern	[shape=oval, color=darkviolet, label="LinePattern"];
+		LinePattern -> DataItem;
+		}
+		subgraph dataitem{
+		DataItem	[shape=oval, color=red2, label="DataItem"];
+		DataItem -> CodeVarChunk;
+		}
+		subgraph delimiter{
+		Delimiter	[shape=oval, color=red2, label="Delimiter"];
+		Delimiter -> String;
+		}
+		subgraph datadesc{
+		DataDesc	[shape=oval, color=red2, label="DataDesc"];
+		DataDesc -> Data;
+		}
+		subgraph delim{
+		Delim	[shape=oval, color=red2, label="Delim"];
+		Delim -> Char;
+		}
+	}
+	subgraph extlibimport {
+		subgraph extlibstate{
+		ExtLibState	[shape=oval, color=cyan3, label="ExtLibState"];
+		ExtLibState -> Mod;
+		ExtLibState -> FuncStmt;
+		ExtLibState -> Name;
+		ExtLibState -> String;
+		}
+	}
+	subgraph externallibrary {
+		subgraph step{
+		Step	[shape=oval, color=darkviolet, label="Step"];
+		Step -> FunctionInterface;
+		Step -> NonEmpty;
+		Step -> CodeExpr;
+		Step -> Condition;
+		Step -> Step;
+		Step -> CodeVarChunk;
+		Step -> FuncStmt;
+		}
+		subgraph functioninterface{
+		FunctionInterface	[shape=oval, color=darkviolet, label="FunctionInterface"];
+		FunctionInterface -> NonEmpty;
+		FunctionInterface -> Requires;
+		FunctionInterface -> FuncType;
+		FunctionInterface -> CodeFuncChunk;
+		FunctionInterface -> Argument;
+		FunctionInterface -> Maybe;
+		FunctionInterface -> Result;
+		}
+		subgraph result{
+		Result	[shape=oval, color=darkviolet, label="Result"];
+		Result -> CodeVarChunk;
+		}
+		subgraph argument{
+		Argument	[shape=oval, color=darkviolet, label="Argument"];
+		Argument -> Maybe;
+		Argument -> NamedArgument;
+		Argument -> ArgumentInfo;
+		}
+		subgraph argumentinfo{
+		ArgumentInfo	[shape=oval, color=darkviolet, label="ArgumentInfo"];
+		ArgumentInfo -> CodeExpr;
+		ArgumentInfo -> Space;
+		ArgumentInfo -> Maybe;
+		ArgumentInfo -> CodeVarChunk;
+		ArgumentInfo -> CodeFuncChunk;
+		ArgumentInfo -> Parameter;
+		ArgumentInfo -> Step;
+		ArgumentInfo -> Requires;
+		ArgumentInfo -> Description;
+		ArgumentInfo -> ClassInfo;
+		ArgumentInfo -> NonEmpty;
+		}
+		subgraph parameter{
+		Parameter	[shape=oval, color=darkviolet, label="Parameter"];
+		Parameter -> ParameterChunk;
+		Parameter -> Space;
+		}
+		subgraph classinfo{
+		ClassInfo	[shape=oval, color=darkviolet, label="ClassInfo"];
+		ClassInfo -> MethodInfo;
+		ClassInfo -> String;
+		}
+		subgraph methodinfo{
+		MethodInfo	[shape=oval, color=darkviolet, label="MethodInfo"];
+		MethodInfo -> Description;
+		MethodInfo -> Parameter;
+		MethodInfo -> Step;
+		MethodInfo -> CodeFuncChunk;
+		MethodInfo -> Maybe;
+		MethodInfo -> NonEmpty;
+		}
+		subgraph functype{
+		FuncType	[shape=oval, color=darkviolet, label="FuncType"];
+		FuncType -> CodeVarChunk;
+		FuncType -> StepGroup;
+		FuncType -> ExternalLibrary;
+		}
+		subgraph condition{
+		Condition	[shape=oval, color=red2, label="Condition"];
+		Condition -> CodeExpr;
+		}
+		subgraph requires{
+		Requires	[shape=oval, color=red2, label="Requires"];
+		Requires -> String;
+		}
+		subgraph externallibrary{
+		ExternalLibrary	[shape=oval, color=red2, label="ExternalLibrary"];
+		ExternalLibrary -> StepGroup;
+		}
+		subgraph stepgroup{
+		StepGroup	[shape=oval, color=red2, label="StepGroup"];
+		StepGroup -> NonEmptyStep;
+		}
+	}
+	subgraph externallibrarycall {
+		subgraph stepgroupfill{
+		StepGroupFill	[shape=oval, color=darkviolet, label="StepGroupFill"];
+		StepGroupFill -> Int;
+		StepGroupFill -> StepFill;
+		}
+		subgraph stepfill{
+		StepFill	[shape=oval, color=darkviolet, label="StepFill"];
+		StepFill -> FunctionIntFill;
+		StepFill -> NonEmpty;
+		StepFill -> CodeExpr;
+		StepFill -> StepFill;
+		StepFill -> CodeVarChunk;
+		}
+		subgraph argumentfill{
+		ArgumentFill	[shape=oval, color=darkviolet, label="ArgumentFill"];
+		ArgumentFill -> Maybe;
+		ArgumentFill -> NamedArgument;
+		ArgumentFill -> CodeExpr;
+		}
+		subgraph parameterfill{
+		ParameterFill	[shape=oval, color=darkviolet, label="ParameterFill"];
+		ParameterFill -> ParameterChunk;
+		}
+		subgraph classinfofill{
+		ClassInfoFill	[shape=oval, color=darkviolet, label="ClassInfoFill"];
+		ClassInfoFill -> MethodInfoFill;
+		}
+		subgraph methodinfofill{
+		MethodInfoFill	[shape=oval, color=darkviolet, label="MethodInfoFill"];
+		MethodInfoFill -> ParameterFill;
+		MethodInfoFill -> Initializer;
+		MethodInfoFill -> StepFill;
+		MethodInfoFill -> NonEmpty;
+		MethodInfoFill -> StepGroupFill;
+		MethodInfoFill -> ExternalLibraryCall;
+		}
+		subgraph functionintfill{
+		FunctionIntFill	[shape=oval, color=darkgreen, label="FunctionIntFill"];
+		FunctionIntFill -> ArgumentFill;
+		}
+		subgraph externallibrarycall{
+		ExternalLibraryCall	[shape=oval, color=red2, label="ExternalLibraryCall"];
+		ExternalLibraryCall -> StepGroupFill;
+		}
+	}
+	subgraph lang {
+		subgraph lang{
+		Lang	[shape=oval, color=darkviolet, label="Lang"];
+		}
+	}
+	subgraph odeinfo {
+		subgraph odeinfo{
+		ODEInfo	[shape=oval, color=cyan3, label="ODEInfo"];
+		ODEInfo -> CodeVarChunk;
+		ODEInfo -> CodeExpr;
+		ODEInfo -> ODEOptions;
+		}
+		subgraph odeoptions{
+		ODEOptions	[shape=oval, color=cyan3, label="ODEOptions"];
+		ODEOptions -> ODEMethod;
+		ODEOptions -> CodeExpr;
+		}
+		subgraph odemethod{
+		ODEMethod	[shape=oval, color=darkviolet, label="ODEMethod"];
+		ODEMethod -> DifferentialModel;
+		ODEMethod -> CodeExpr;
+		}
+	}
+	subgraph odelibpckg {
+		subgraph odelibpckg{
+		ODELibPckg	[shape=oval, color=cyan3, label="ODELibPckg"];
+		ODELibPckg -> Name;
+		ODELibPckg -> Version;
+		ODELibPckg -> ExternalLibrary;
+		ODELibPckg -> ODEInfoExternalLibraryCall;
+		ODELibPckg -> MaybeFilePath;
+		ODELibPckg -> Lang;
+		}
+	}
+	subgraph coicehs {
+		subgraph choices{
+		Choices	[shape=oval, color=cyan3, label="Choices"];
+		Choices -> Lang;
+		Choices -> Architecture;
+		Choices -> DataInfo;
+		Choices -> Maps;
+		Choices -> OptionalFeatures;
+		Choices -> Constraints;
+		Choices -> ExtLib;
+		Choices -> InternalConceptName;
+		Choices -> Int;
+		}
+		subgraph architecture{
+		Architecture	[shape=oval, color=cyan3, label="Architecture"];
+		Architecture -> Modularity;
+		Architecture -> ImplementationType;
+		}
+		subgraph datainfo{
+		DataInfo	[shape=oval, color=cyan3, label="DataInfo"];
+		DataInfo -> Structure;
+		DataInfo -> ConstantStructure;
+		DataInfo -> ConstantRepr;
+		}
+		subgraph maps{
+		Maps	[shape=oval, color=cyan3, label="Maps"];
+		Maps -> ConceptMatchMap;
+		Maps -> SpaceMatch;
+		}
+		subgraph optionalfeatures{
+		OptionalFeatures	[shape=oval, color=cyan3, label="OptionalFeatures"];
+		OptionalFeatures -> DocConfig;
+		OptionalFeatures -> LogConfig;
+		OptionalFeatures -> AuxFile;
+		}
+		subgraph docconfig{
+		DocConfig	[shape=oval, color=cyan3, label="DocConfig"];
+		DocConfig -> Comments;
+		DocConfig -> Verbosity;
+		DocConfig -> Visibility;
+		}
+		subgraph logconfig{
+		LogConfig	[shape=oval, color=cyan3, label="LogConfig"];
+		LogConfig -> Logging;
+		LogConfig -> FilePath;
+		}
+		subgraph constraints{
+		Constraints	[shape=oval, color=cyan3, label="Constraints"];
+		Constraints -> ConstraintBehaviour;
+		}
+		subgraph modularity{
+		Modularity	[shape=oval, color=darkviolet, label="Modularity"];
+		}
+		subgraph implementationtype{
+		ImplementationType	[shape=oval, color=darkviolet, label="ImplementationType"];
+		}
+		subgraph structure{
+		Structure	[shape=oval, color=darkviolet, label="Structure"];
+		}
+		subgraph constantstructure{
+		ConstantStructure	[shape=oval, color=darkviolet, label="ConstantStructure"];
+		}
+		subgraph constantrepr{
+		ConstantRepr	[shape=oval, color=darkviolet, label="ConstantRepr"];
+		}
+		subgraph codeconcept{
+		CodeConcept	[shape=oval, color=darkviolet, label="CodeConcept"];
+		}
+		subgraph comments{
+		Comments	[shape=oval, color=darkviolet, label="Comments"];
+		}
+		subgraph verbosity{
+		Verbosity	[shape=oval, color=darkviolet, label="Verbosity"];
+		}
+		subgraph visibility{
+		Visibility	[shape=oval, color=darkviolet, label="Visibility"];
+		}
+		subgraph logging{
+		Logging	[shape=oval, color=darkviolet, label="Logging"];
+		}
+		subgraph auxfile{
+		AuxFile	[shape=oval, color=darkviolet, label="AuxFile"];
+		AuxFile -> FilePath;
+		}
+		subgraph constraintbehaviour{
+		ConstraintBehaviour	[shape=oval, color=darkviolet, label="ConstraintBehaviour"];
+		}
+		subgraph internalconcept{
+		InternalConcept	[shape=oval, color=darkviolet, label="InternalConcept"];
+		}
+		subgraph extlib{
+		ExtLib	[shape=oval, color=darkgreen, label="ExtLib"];
+		}
+		subgraph conceptmatchmap{
+		ConceptMatchMap	[shape=oval, color=red2, label="ConceptMatchMap"];
+		ConceptMatchMap -> MapUIDCodeConcept;
+		}
+		subgraph matchedconceptmap{
+		MatchedConceptMap	[shape=oval, color=red2, label="MatchedConceptMap"];
+		MatchedConceptMap -> MapUIDCodeConcept;
+		}
+		subgraph spacematch{
+		SpaceMatch	[shape=oval, color=red2, label="SpaceMatch"];
+		SpaceMatch -> SpaceCodeType;
+		}
+	}
+	subgraph code {
+	}
+	subgraph codespec {
+		subgraph codespec{
+		CodeSpec	[shape=oval, color=cyan3, label="CodeSpec"];
+		CodeSpec -> Name;
+		CodeSpec -> a;
+		CodeSpec -> Purpose;
+		CodeSpec -> Background;
+		CodeSpec -> Input;
+		CodeSpec -> Derived;
+		CodeSpec -> Output;
+		CodeSpec -> FilePath;
+		CodeSpec -> Def;
+		CodeSpec -> ConstraintCEMap;
+		CodeSpec -> Const;
+		CodeSpec -> ConstantMap;
+		CodeSpec -> Mod;
+		CodeSpec -> ChunkDB;
+		}
+		subgraph input{
+		Input	[shape=oval, color=red2, label="Input"];
+		Input -> CodeVarChunk;
+		}
+		subgraph output{
+		Output	[shape=oval, color=red2, label="Output"];
+		Output -> CodeVarChunk;
+		}
+		subgraph const{
+		Const	[shape=oval, color=red2, label="Const"];
+		Const -> CodeDefinition;
+		}
+		subgraph derived{
+		Derived	[shape=oval, color=red2, label="Derived"];
+		Derived -> CodeDefinition;
+		}
+		subgraph def{
+		Def	[shape=oval, color=red2, label="Def"];
+		Def -> CodeDefinition;
+		}
+		subgraph constantmap{
+		ConstantMap	[shape=oval, color=red2, label="ConstantMap"];
+		ConstantMap -> MapUIDCodeDefinition;
+		}
+		subgraph known{
+		Known	[shape=oval, color=red2, label="Known"];
+		Known -> CodeVarChunk;
+		}
+		subgraph need{
+		Need	[shape=oval, color=red2, label="Need"];
+		Need -> CodeVarChunk;
+		}
+	}
+	subgraph mod {
+		subgraph class{
+		Class	[shape=oval, color=cyan3, label="Class"];
+		Class -> Name;
+		Class -> MaybeName;
+		Class -> Description;
+		Class -> StateVariable;
+		Class -> Func;
+		}
+		subgraph statevariable{
+		StateVariable	[shape=oval, color=cyan3, label="StateVariable"];
+		StateVariable -> ScopeTag;
+		StateVariable -> CodeVarChunk;
+		}
+		subgraph mod{
+		Mod	[shape=oval, color=darkviolet, label="Mod"];
+		Mod -> Name;
+		Mod -> Description;
+		Mod -> Import;
+		Mod -> Class;
+		Mod -> Func;
+		Mod -> Mod;
+		}
+		subgraph func{
+		Func	[shape=oval, color=darkviolet, label="Func"];
+		Func -> FuncDef;
+		Func -> FuncData;
+		Func -> Name;
+		Func -> Description;
+		Func -> DataDesc;
+		Func -> Func;
+		}
+		subgraph funcdata{
+		FuncData	[shape=oval, color=darkviolet, label="FuncData"];
+		FuncData -> Name;
+		FuncData -> Description;
+		FuncData -> DataDesc;
+		FuncData -> FuncData;
+		}
+		subgraph funcdef{
+		FuncDef	[shape=oval, color=darkviolet, label="FuncDef"];
+		FuncDef -> Name;
+		FuncDef -> Description;
+		FuncDef -> ParameterChunk;
+		FuncDef -> Space;
+		}
+		subgraph funcstmt{
+		FuncStmt	[shape=oval, color=darkviolet, label="FuncStmt"];
+		FuncStmt -> CodeVarChunk;
+		FuncStmt -> CodeExpr;
+		FuncStmt -> FuncStmt;
+		FuncStmt -> Integer;
+		}
+		subgraph name{
+		Name	[shape=oval, color=red2, label="Name"];
+		Name -> String;
+		}
+		subgraph description{
+		Description	[shape=oval, color=red2, label="Description"];
+		Description -> String;
+		}
+		subgraph import{
+		Import	[shape=oval, color=red2, label="Import"];
+		Import -> String;
+		}
+		subgraph version{
+		Version	[shape=oval, color=red2, label="Version"];
+		Version -> String;
+		}
+		subgraph initializer{
+		Initializer	[shape=oval, color=red2, label="Initializer"];
+		Initializer -> CodeVarChunkCodeExpr;
+		}
+	}
+	subgraph filetetss {
+	}
+	subgraph helloworld {
+	}
+	subgraph helper {
+	}
+	subgraph main {
+	}
+	subgraph namegentets {
+	}
+	subgraph obervers {
+	}
+	subgraph patterntets {
+	}
+	subgraph vectortets {
+	}
+}

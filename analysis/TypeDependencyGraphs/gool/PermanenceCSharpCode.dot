@@ -1,0 +1,4 @@
+digraph permanencecsharpcode{
+PermanenceCSharpCode	[shape=oval, color=red2, label="PermanenceCSharpCode"];
+PermanenceCSharpCode -> Doc;
+}

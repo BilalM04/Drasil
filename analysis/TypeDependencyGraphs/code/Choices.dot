@@ -1,0 +1,12 @@
+digraph choices{
+Choices	[shape=oval, color=cyan3, label="Choices"];
+Choices -> Lang;
+Choices -> Architecture;
+Choices -> DataInfo;
+Choices -> Maps;
+Choices -> OptionalFeatures;
+Choices -> Constraints;
+Choices -> ExtLib;
+Choices -> InternalConceptName;
+Choices -> Int;
+}

@@ -1,0 +1,4 @@
+digraph variable{
+Variable	[shape=oval, color=red2, label="Variable"];
+Variable -> String;
+}

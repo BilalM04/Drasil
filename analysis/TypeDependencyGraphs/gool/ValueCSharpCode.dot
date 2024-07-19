@@ -1,0 +1,4 @@
+digraph valuecsharpcode{
+ValueCSharpCode	[shape=oval, color=red2, label="ValueCSharpCode"];
+ValueCSharpCode -> ValData;
+}

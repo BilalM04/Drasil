@@ -1,0 +1,4 @@
+digraph docinoutfuncr{
+DocInOutFuncr	[shape=oval, color=red2, label="DocInOutFuncr"];
+DocInOutFuncr -> StringStringSVariabler;
+}

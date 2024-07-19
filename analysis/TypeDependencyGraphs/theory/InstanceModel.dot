@@ -1,0 +1,11 @@
+digraph instancemodel{
+InstanceModel	[shape=oval, color=cyan3, label="InstanceModel"];
+InstanceModel -> ModelKindExpr;
+InstanceModel -> Inputs;
+InstanceModel -> Output;
+InstanceModel -> DecRef;
+InstanceModel -> MaybeDerivation;
+InstanceModel -> ShortName;
+InstanceModel -> String;
+InstanceModel -> Sentence;
+}

@@ -1,0 +1,1074 @@
+digraph alltypes {
+	subgraph clike {
+	}
+	subgraph csarprendererh {
+		subgraph csharpcodea{
+		CSharpCodea	[shape=oval, color=darkgreen, label="CSharpCodea"];
+		CSharpCodea -> a;
+		}
+		subgraph programcsharpcode{
+		ProgramCSharpCode	[shape=oval, color=red2, label="ProgramCSharpCode"];
+		ProgramCSharpCode -> ProgData;
+		}
+		subgraph filecsharpcode{
+		FileCSharpCode	[shape=oval, color=red2, label="FileCSharpCode"];
+		FileCSharpCode -> FileData;
+		}
+		subgraph importcsharpcode{
+		ImportCSharpCode	[shape=oval, color=red2, label="ImportCSharpCode"];
+		ImportCSharpCode -> Doc;
+		}
+		subgraph permanencecsharpcode{
+		PermanenceCSharpCode	[shape=oval, color=red2, label="PermanenceCSharpCode"];
+		PermanenceCSharpCode -> Doc;
+		}
+		subgraph bodycsharpcode{
+		BodyCSharpCode	[shape=oval, color=red2, label="BodyCSharpCode"];
+		BodyCSharpCode -> Doc;
+		}
+		subgraph blockcsharpcode{
+		BlockCSharpCode	[shape=oval, color=red2, label="BlockCSharpCode"];
+		BlockCSharpCode -> Doc;
+		}
+		subgraph typecsharpcode{
+		TypeCSharpCode	[shape=oval, color=red2, label="TypeCSharpCode"];
+		TypeCSharpCode -> TypeData;
+		}
+		subgraph unaryopcsharpcode{
+		UnaryOpCSharpCode	[shape=oval, color=red2, label="UnaryOpCSharpCode"];
+		UnaryOpCSharpCode -> OpData;
+		}
+		subgraph binaryopcsharpcode{
+		BinaryOpCSharpCode	[shape=oval, color=red2, label="BinaryOpCSharpCode"];
+		BinaryOpCSharpCode -> OpData;
+		}
+		subgraph variablecsharpcode{
+		VariableCSharpCode	[shape=oval, color=red2, label="VariableCSharpCode"];
+		VariableCSharpCode -> VarData;
+		}
+		subgraph valuecsharpcode{
+		ValueCSharpCode	[shape=oval, color=red2, label="ValueCSharpCode"];
+		ValueCSharpCode -> ValData;
+		}
+		subgraph functioncsharpcode{
+		FunctionCSharpCode	[shape=oval, color=red2, label="FunctionCSharpCode"];
+		FunctionCSharpCode -> FuncData;
+		}
+		subgraph thunkcsharpcode{
+		ThunkCSharpCode	[shape=oval, color=red2, label="ThunkCSharpCode"];
+		ThunkCSharpCode -> CommonThunkVS;
+		}
+		subgraph statementcsharpcode{
+		StatementCSharpCode	[shape=oval, color=red2, label="StatementCSharpCode"];
+		StatementCSharpCode -> DocTerminator;
+		}
+		subgraph scopecsharpcode{
+		ScopeCSharpCode	[shape=oval, color=red2, label="ScopeCSharpCode"];
+		ScopeCSharpCode -> Doc;
+		}
+		subgraph methodtypecsharpcode{
+		MethodTypeCSharpCode	[shape=oval, color=red2, label="MethodTypeCSharpCode"];
+		MethodTypeCSharpCode -> TypeData;
+		}
+		subgraph parametercsharpcode{
+		ParameterCSharpCode	[shape=oval, color=red2, label="ParameterCSharpCode"];
+		ParameterCSharpCode -> ParamData;
+		}
+		subgraph methodcsharpcode{
+		MethodCSharpCode	[shape=oval, color=red2, label="MethodCSharpCode"];
+		MethodCSharpCode -> MethodData;
+		}
+		subgraph statevarcsharpcode{
+		StateVarCSharpCode	[shape=oval, color=red2, label="StateVarCSharpCode"];
+		StateVarCSharpCode -> Doc;
+		}
+		subgraph classcsharpcode{
+		ClassCSharpCode	[shape=oval, color=red2, label="ClassCSharpCode"];
+		ClassCSharpCode -> Doc;
+		}
+		subgraph modulecsharpcode{
+		ModuleCSharpCode	[shape=oval, color=red2, label="ModuleCSharpCode"];
+		ModuleCSharpCode -> ModData;
+		}
+		subgraph blockcommentcsharpcode{
+		BlockCommentCSharpCode	[shape=oval, color=red2, label="BlockCommentCSharpCode"];
+		BlockCommentCSharpCode -> Doc;
+		}
+	}
+	subgraph commonpeudooos {
+	}
+	subgraph contructorss {
+		subgraph vsopr{
+		VSOpr	[shape=oval, color=red2, label="VSOpr"];
+		VSOpr -> VSrOpData;
+		}
+	}
+	subgraph cpprenderer {
+		subgraph cppcodexya{
+		CppCodexya	[shape=oval, color=cyan3, label="CppCodexya"];
+		CppCodexya -> xa;
+		CppCodexya -> ya;
+		}
+		subgraph methoddata{
+		MethodData	[shape=oval, color=cyan3, label="MethodData"];
+		MethodData -> ScopeTag;
+		MethodData -> Doc;
+		}
+		subgraph cppsrccodea{
+		CppSrcCodea	[shape=oval, color=darkgreen, label="CppSrcCodea"];
+		CppSrcCodea -> a;
+		}
+		subgraph cpphdrcodea{
+		CppHdrCodea	[shape=oval, color=darkgreen, label="CppHdrCodea"];
+		CppHdrCodea -> a;
+		}
+		subgraph programpcppsrccodecpphdrcode{
+		ProgrampCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="ProgrampCppSrcCodeCppHdrCode"];
+		ProgrampCppSrcCodeCppHdrCode -> ProgData;
+		}
+		subgraph filepcppsrccodecpphdrcode{
+		FilepCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="FilepCppSrcCodeCppHdrCode"];
+		FilepCppSrcCodeCppHdrCode -> FileData;
+		}
+		subgraph importpcppsrccodecpphdrcode{
+		ImportpCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="ImportpCppSrcCodeCppHdrCode"];
+		ImportpCppSrcCodeCppHdrCode -> Doc;
+		}
+		subgraph permanencepcppsrccodecpphdrcode{
+		PermanencepCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="PermanencepCppSrcCodeCppHdrCode"];
+		PermanencepCppSrcCodeCppHdrCode -> BindData;
+		}
+		subgraph bodypcppsrccodecpphdrcode{
+		BodypCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="BodypCppSrcCodeCppHdrCode"];
+		BodypCppSrcCodeCppHdrCode -> Doc;
+		}
+		subgraph blockpcppsrccodecpphdrcode{
+		BlockpCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="BlockpCppSrcCodeCppHdrCode"];
+		BlockpCppSrcCodeCppHdrCode -> Doc;
+		}
+		subgraph typepcppsrccodecpphdrcode{
+		TypepCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="TypepCppSrcCodeCppHdrCode"];
+		TypepCppSrcCodeCppHdrCode -> TypeData;
+		}
+		subgraph unaryoppcppsrccodecpphdrcode{
+		UnaryOppCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="UnaryOppCppSrcCodeCppHdrCode"];
+		UnaryOppCppSrcCodeCppHdrCode -> OpData;
+		}
+		subgraph binaryoppcppsrccodecpphdrcode{
+		BinaryOppCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="BinaryOppCppSrcCodeCppHdrCode"];
+		BinaryOppCppSrcCodeCppHdrCode -> OpData;
+		}
+		subgraph variablepcppsrccodecpphdrcode{
+		VariablepCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="VariablepCppSrcCodeCppHdrCode"];
+		VariablepCppSrcCodeCppHdrCode -> VarData;
+		}
+		subgraph valuepcppsrccodecpphdrcode{
+		ValuepCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="ValuepCppSrcCodeCppHdrCode"];
+		ValuepCppSrcCodeCppHdrCode -> ValData;
+		}
+		subgraph functionpcppsrccodecpphdrcode{
+		FunctionpCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="FunctionpCppSrcCodeCppHdrCode"];
+		FunctionpCppSrcCodeCppHdrCode -> FuncData;
+		}
+		subgraph thunkpcppsrccodecpphdrcode{
+		ThunkpCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="ThunkpCppSrcCodeCppHdrCode"];
+		ThunkpCppSrcCodeCppHdrCode -> CommonThunkVS;
+		}
+		subgraph statementpcppsrccodecpphdrcode{
+		StatementpCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="StatementpCppSrcCodeCppHdrCode"];
+		StatementpCppSrcCodeCppHdrCode -> DocTerminator;
+		}
+		subgraph scopepcppsrccodecpphdrcode{
+		ScopepCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="ScopepCppSrcCodeCppHdrCode"];
+		ScopepCppSrcCodeCppHdrCode -> DocScopeTag;
+		}
+		subgraph methodtypepcppsrccodecpphdrcode{
+		MethodTypepCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="MethodTypepCppSrcCodeCppHdrCode"];
+		MethodTypepCppSrcCodeCppHdrCode -> TypeData;
+		}
+		subgraph parameterpcppsrccodecpphdrcode{
+		ParameterpCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="ParameterpCppSrcCodeCppHdrCode"];
+		ParameterpCppSrcCodeCppHdrCode -> ParamData;
+		}
+		subgraph methodpcppsrccodecpphdrcode{
+		MethodpCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="MethodpCppSrcCodeCppHdrCode"];
+		MethodpCppSrcCodeCppHdrCode -> MethodData;
+		}
+		subgraph statevarpcppsrccodecpphdrcode{
+		StateVarpCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="StateVarpCppSrcCodeCppHdrCode"];
+		StateVarpCppSrcCodeCppHdrCode -> StateVarData;
+		}
+		subgraph classpcppsrccodecpphdrcode{
+		ClasspCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="ClasspCppSrcCodeCppHdrCode"];
+		ClasspCppSrcCodeCppHdrCode -> Doc;
+		}
+		subgraph modulepcppsrccodecpphdrcode{
+		ModulepCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="ModulepCppSrcCodeCppHdrCode"];
+		ModulepCppSrcCodeCppHdrCode -> ModData;
+		}
+		subgraph blockcommentpcppsrccodecpphdrcode{
+		BlockCommentpCppSrcCodeCppHdrCode	[shape=oval, color=red2, label="BlockCommentpCppSrcCodeCppHdrCode"];
+		BlockCommentpCppSrcCodeCppHdrCode -> Doc;
+		}
+		subgraph srcstatesa{
+		SrcStatesa	[shape=oval, color=red2, label="SrcStatesa"];
+		SrcStatesa -> StatesCppSrcCodea;
+		}
+		subgraph hdrstatesa{
+		HdrStatesa	[shape=oval, color=red2, label="HdrStatesa"];
+		HdrStatesa -> StatesCppHdrCodea;
+		}
+		subgraph pairstatespa{
+		PairStatespa	[shape=oval, color=red2, label="PairStatespa"];
+		PairStatespa -> StatespCppSrcCodeCppHdrCodea;
+		}
+		subgraph programcppsrccode{
+		ProgramCppSrcCode	[shape=oval, color=red2, label="ProgramCppSrcCode"];
+		ProgramCppSrcCode -> ProgData;
+		}
+		subgraph filecppsrccode{
+		FileCppSrcCode	[shape=oval, color=red2, label="FileCppSrcCode"];
+		FileCppSrcCode -> FileData;
+		}
+		subgraph importcppsrccode{
+		ImportCppSrcCode	[shape=oval, color=red2, label="ImportCppSrcCode"];
+		ImportCppSrcCode -> Doc;
+		}
+		subgraph permanencecppsrccode{
+		PermanenceCppSrcCode	[shape=oval, color=red2, label="PermanenceCppSrcCode"];
+		PermanenceCppSrcCode -> BindData;
+		}
+		subgraph bodycppsrccode{
+		BodyCppSrcCode	[shape=oval, color=red2, label="BodyCppSrcCode"];
+		BodyCppSrcCode -> Doc;
+		}
+		subgraph blockcppsrccode{
+		BlockCppSrcCode	[shape=oval, color=red2, label="BlockCppSrcCode"];
+		BlockCppSrcCode -> Doc;
+		}
+		subgraph typecppsrccode{
+		TypeCppSrcCode	[shape=oval, color=red2, label="TypeCppSrcCode"];
+		TypeCppSrcCode -> TypeData;
+		}
+		subgraph unaryopcppsrccode{
+		UnaryOpCppSrcCode	[shape=oval, color=red2, label="UnaryOpCppSrcCode"];
+		UnaryOpCppSrcCode -> OpData;
+		}
+		subgraph binaryopcppsrccode{
+		BinaryOpCppSrcCode	[shape=oval, color=red2, label="BinaryOpCppSrcCode"];
+		BinaryOpCppSrcCode -> OpData;
+		}
+		subgraph variablecppsrccode{
+		VariableCppSrcCode	[shape=oval, color=red2, label="VariableCppSrcCode"];
+		VariableCppSrcCode -> VarData;
+		}
+		subgraph valuecppsrccode{
+		ValueCppSrcCode	[shape=oval, color=red2, label="ValueCppSrcCode"];
+		ValueCppSrcCode -> ValData;
+		}
+		subgraph functioncppsrccode{
+		FunctionCppSrcCode	[shape=oval, color=red2, label="FunctionCppSrcCode"];
+		FunctionCppSrcCode -> FuncData;
+		}
+		subgraph thunkcppsrccode{
+		ThunkCppSrcCode	[shape=oval, color=red2, label="ThunkCppSrcCode"];
+		ThunkCppSrcCode -> CommonThunkVS;
+		}
+		subgraph statementcppsrccode{
+		StatementCppSrcCode	[shape=oval, color=red2, label="StatementCppSrcCode"];
+		StatementCppSrcCode -> DocTerminator;
+		}
+		subgraph scopecppsrccode{
+		ScopeCppSrcCode	[shape=oval, color=red2, label="ScopeCppSrcCode"];
+		ScopeCppSrcCode -> DocScopeTag;
+		}
+		subgraph methodtypecppsrccode{
+		MethodTypeCppSrcCode	[shape=oval, color=red2, label="MethodTypeCppSrcCode"];
+		MethodTypeCppSrcCode -> TypeData;
+		}
+		subgraph parametercppsrccode{
+		ParameterCppSrcCode	[shape=oval, color=red2, label="ParameterCppSrcCode"];
+		ParameterCppSrcCode -> ParamData;
+		}
+		subgraph methodcppsrccode{
+		MethodCppSrcCode	[shape=oval, color=red2, label="MethodCppSrcCode"];
+		MethodCppSrcCode -> MethodData;
+		}
+		subgraph statevarcppsrccode{
+		StateVarCppSrcCode	[shape=oval, color=red2, label="StateVarCppSrcCode"];
+		StateVarCppSrcCode -> StateVarData;
+		}
+		subgraph classcppsrccode{
+		ClassCppSrcCode	[shape=oval, color=red2, label="ClassCppSrcCode"];
+		ClassCppSrcCode -> Doc;
+		}
+		subgraph modulecppsrccode{
+		ModuleCppSrcCode	[shape=oval, color=red2, label="ModuleCppSrcCode"];
+		ModuleCppSrcCode -> ModData;
+		}
+		subgraph blockcommentcppsrccode{
+		BlockCommentCppSrcCode	[shape=oval, color=red2, label="BlockCommentCppSrcCode"];
+		BlockCommentCppSrcCode -> Doc;
+		}
+		subgraph filecpphdrcode{
+		FileCppHdrCode	[shape=oval, color=red2, label="FileCppHdrCode"];
+		FileCppHdrCode -> FileData;
+		}
+		subgraph importcpphdrcode{
+		ImportCppHdrCode	[shape=oval, color=red2, label="ImportCppHdrCode"];
+		ImportCppHdrCode -> Doc;
+		}
+		subgraph permanencecpphdrcode{
+		PermanenceCppHdrCode	[shape=oval, color=red2, label="PermanenceCppHdrCode"];
+		PermanenceCppHdrCode -> BindData;
+		}
+		subgraph bodycpphdrcode{
+		BodyCppHdrCode	[shape=oval, color=red2, label="BodyCppHdrCode"];
+		BodyCppHdrCode -> Doc;
+		}
+		subgraph blockcpphdrcode{
+		BlockCppHdrCode	[shape=oval, color=red2, label="BlockCppHdrCode"];
+		BlockCppHdrCode -> Doc;
+		}
+		subgraph typecpphdrcode{
+		TypeCppHdrCode	[shape=oval, color=red2, label="TypeCppHdrCode"];
+		TypeCppHdrCode -> TypeData;
+		}
+		subgraph unaryopcpphdrcode{
+		UnaryOpCppHdrCode	[shape=oval, color=red2, label="UnaryOpCppHdrCode"];
+		UnaryOpCppHdrCode -> OpData;
+		}
+		subgraph binaryopcpphdrcode{
+		BinaryOpCppHdrCode	[shape=oval, color=red2, label="BinaryOpCppHdrCode"];
+		BinaryOpCppHdrCode -> OpData;
+		}
+		subgraph variablecpphdrcode{
+		VariableCppHdrCode	[shape=oval, color=red2, label="VariableCppHdrCode"];
+		VariableCppHdrCode -> VarData;
+		}
+		subgraph valuecpphdrcode{
+		ValueCppHdrCode	[shape=oval, color=red2, label="ValueCppHdrCode"];
+		ValueCppHdrCode -> ValData;
+		}
+		subgraph functioncpphdrcode{
+		FunctionCppHdrCode	[shape=oval, color=red2, label="FunctionCppHdrCode"];
+		FunctionCppHdrCode -> FuncData;
+		}
+		subgraph thunkcpphdrcode{
+		ThunkCppHdrCode	[shape=oval, color=red2, label="ThunkCppHdrCode"];
+		ThunkCppHdrCode -> CommonThunkVS;
+		}
+		subgraph statementcpphdrcode{
+		StatementCppHdrCode	[shape=oval, color=red2, label="StatementCppHdrCode"];
+		StatementCppHdrCode -> DocTerminator;
+		}
+		subgraph scopecpphdrcode{
+		ScopeCppHdrCode	[shape=oval, color=red2, label="ScopeCppHdrCode"];
+		ScopeCppHdrCode -> DocScopeTag;
+		}
+		subgraph methodtypecpphdrcode{
+		MethodTypeCppHdrCode	[shape=oval, color=red2, label="MethodTypeCppHdrCode"];
+		MethodTypeCppHdrCode -> TypeData;
+		}
+		subgraph parametercpphdrcode{
+		ParameterCppHdrCode	[shape=oval, color=red2, label="ParameterCppHdrCode"];
+		ParameterCppHdrCode -> ParamData;
+		}
+		subgraph methodcpphdrcode{
+		MethodCppHdrCode	[shape=oval, color=red2, label="MethodCppHdrCode"];
+		MethodCppHdrCode -> MethodData;
+		}
+		subgraph statevarcpphdrcode{
+		StateVarCppHdrCode	[shape=oval, color=red2, label="StateVarCppHdrCode"];
+		StateVarCppHdrCode -> StateVarData;
+		}
+		subgraph classcpphdrcode{
+		ClassCppHdrCode	[shape=oval, color=red2, label="ClassCppHdrCode"];
+		ClassCppHdrCode -> Doc;
+		}
+		subgraph modulecpphdrcode{
+		ModuleCppHdrCode	[shape=oval, color=red2, label="ModuleCppHdrCode"];
+		ModuleCppHdrCode -> ModData;
+		}
+		subgraph blockcommentcpphdrcode{
+		BlockCommentCppHdrCode	[shape=oval, color=red2, label="BlockCommentCppHdrCode"];
+		BlockCommentCppHdrCode -> Doc;
+		}
+	}
+	subgraph javarenderer {
+		subgraph javacodea{
+		JavaCodea	[shape=oval, color=darkgreen, label="JavaCodea"];
+		JavaCodea -> a;
+		}
+		subgraph programjavacode{
+		ProgramJavaCode	[shape=oval, color=red2, label="ProgramJavaCode"];
+		ProgramJavaCode -> ProgData;
+		}
+		subgraph filejavacode{
+		FileJavaCode	[shape=oval, color=red2, label="FileJavaCode"];
+		FileJavaCode -> FileData;
+		}
+		subgraph importjavacode{
+		ImportJavaCode	[shape=oval, color=red2, label="ImportJavaCode"];
+		ImportJavaCode -> Doc;
+		}
+		subgraph permanencejavacode{
+		PermanenceJavaCode	[shape=oval, color=red2, label="PermanenceJavaCode"];
+		PermanenceJavaCode -> Doc;
+		}
+		subgraph bodyjavacode{
+		BodyJavaCode	[shape=oval, color=red2, label="BodyJavaCode"];
+		BodyJavaCode -> Doc;
+		}
+		subgraph blockjavacode{
+		BlockJavaCode	[shape=oval, color=red2, label="BlockJavaCode"];
+		BlockJavaCode -> Doc;
+		}
+		subgraph typejavacode{
+		TypeJavaCode	[shape=oval, color=red2, label="TypeJavaCode"];
+		TypeJavaCode -> TypeData;
+		}
+		subgraph unaryopjavacode{
+		UnaryOpJavaCode	[shape=oval, color=red2, label="UnaryOpJavaCode"];
+		UnaryOpJavaCode -> OpData;
+		}
+		subgraph binaryopjavacode{
+		BinaryOpJavaCode	[shape=oval, color=red2, label="BinaryOpJavaCode"];
+		BinaryOpJavaCode -> OpData;
+		}
+		subgraph variablejavacode{
+		VariableJavaCode	[shape=oval, color=red2, label="VariableJavaCode"];
+		VariableJavaCode -> VarData;
+		}
+		subgraph valuejavacode{
+		ValueJavaCode	[shape=oval, color=red2, label="ValueJavaCode"];
+		ValueJavaCode -> ValData;
+		}
+		subgraph functionjavacode{
+		FunctionJavaCode	[shape=oval, color=red2, label="FunctionJavaCode"];
+		FunctionJavaCode -> FuncData;
+		}
+		subgraph thunkjavacode{
+		ThunkJavaCode	[shape=oval, color=red2, label="ThunkJavaCode"];
+		ThunkJavaCode -> CommonThunkVS;
+		}
+		subgraph statementjavacode{
+		StatementJavaCode	[shape=oval, color=red2, label="StatementJavaCode"];
+		StatementJavaCode -> DocTerminator;
+		}
+		subgraph scopejavacode{
+		ScopeJavaCode	[shape=oval, color=red2, label="ScopeJavaCode"];
+		ScopeJavaCode -> Doc;
+		}
+		subgraph methodtypejavacode{
+		MethodTypeJavaCode	[shape=oval, color=red2, label="MethodTypeJavaCode"];
+		MethodTypeJavaCode -> TypeData;
+		}
+		subgraph parameterjavacode{
+		ParameterJavaCode	[shape=oval, color=red2, label="ParameterJavaCode"];
+		ParameterJavaCode -> ParamData;
+		}
+		subgraph methodjavacode{
+		MethodJavaCode	[shape=oval, color=red2, label="MethodJavaCode"];
+		MethodJavaCode -> MethodData;
+		}
+		subgraph statevarjavacode{
+		StateVarJavaCode	[shape=oval, color=red2, label="StateVarJavaCode"];
+		StateVarJavaCode -> Doc;
+		}
+		subgraph classjavacode{
+		ClassJavaCode	[shape=oval, color=red2, label="ClassJavaCode"];
+		ClassJavaCode -> Doc;
+		}
+		subgraph modulejavacode{
+		ModuleJavaCode	[shape=oval, color=red2, label="ModuleJavaCode"];
+		ModuleJavaCode -> ModData;
+		}
+		subgraph blockcommentjavacode{
+		BlockCommentJavaCode	[shape=oval, color=red2, label="BlockCommentJavaCode"];
+		BlockCommentJavaCode -> Doc;
+		}
+	}
+	subgraph languagepolymorpich {
+		subgraph optionalspace{
+		OptionalSpace	[shape=oval, color=darkgreen, label="OptionalSpace"];
+		OptionalSpace -> Doc;
+		}
+	}
+	subgraph macros {
+	}
+	subgraph pytonrendererh {
+		subgraph pythoncodea{
+		PythonCodea	[shape=oval, color=darkgreen, label="PythonCodea"];
+		PythonCodea -> a;
+		}
+		subgraph programpythoncode{
+		ProgramPythonCode	[shape=oval, color=red2, label="ProgramPythonCode"];
+		ProgramPythonCode -> ProgData;
+		}
+		subgraph filepythoncode{
+		FilePythonCode	[shape=oval, color=red2, label="FilePythonCode"];
+		FilePythonCode -> FileData;
+		}
+		subgraph importpythoncode{
+		ImportPythonCode	[shape=oval, color=red2, label="ImportPythonCode"];
+		ImportPythonCode -> Doc;
+		}
+		subgraph permanencepythoncode{
+		PermanencePythonCode	[shape=oval, color=red2, label="PermanencePythonCode"];
+		PermanencePythonCode -> Doc;
+		}
+		subgraph bodypythoncode{
+		BodyPythonCode	[shape=oval, color=red2, label="BodyPythonCode"];
+		BodyPythonCode -> Doc;
+		}
+		subgraph blockpythoncode{
+		BlockPythonCode	[shape=oval, color=red2, label="BlockPythonCode"];
+		BlockPythonCode -> Doc;
+		}
+		subgraph typepythoncode{
+		TypePythonCode	[shape=oval, color=red2, label="TypePythonCode"];
+		TypePythonCode -> TypeData;
+		}
+		subgraph unaryoppythoncode{
+		UnaryOpPythonCode	[shape=oval, color=red2, label="UnaryOpPythonCode"];
+		UnaryOpPythonCode -> OpData;
+		}
+		subgraph binaryoppythoncode{
+		BinaryOpPythonCode	[shape=oval, color=red2, label="BinaryOpPythonCode"];
+		BinaryOpPythonCode -> OpData;
+		}
+		subgraph variablepythoncode{
+		VariablePythonCode	[shape=oval, color=red2, label="VariablePythonCode"];
+		VariablePythonCode -> VarData;
+		}
+		subgraph valuepythoncode{
+		ValuePythonCode	[shape=oval, color=red2, label="ValuePythonCode"];
+		ValuePythonCode -> ValData;
+		}
+		subgraph functionpythoncode{
+		FunctionPythonCode	[shape=oval, color=red2, label="FunctionPythonCode"];
+		FunctionPythonCode -> FuncData;
+		}
+		subgraph thunkpythoncode{
+		ThunkPythonCode	[shape=oval, color=red2, label="ThunkPythonCode"];
+		ThunkPythonCode -> CommonThunkVS;
+		}
+		subgraph statementpythoncode{
+		StatementPythonCode	[shape=oval, color=red2, label="StatementPythonCode"];
+		StatementPythonCode -> DocTerminator;
+		}
+		subgraph scopepythoncode{
+		ScopePythonCode	[shape=oval, color=red2, label="ScopePythonCode"];
+		ScopePythonCode -> Doc;
+		}
+		subgraph methodtypepythoncode{
+		MethodTypePythonCode	[shape=oval, color=red2, label="MethodTypePythonCode"];
+		MethodTypePythonCode -> TypeData;
+		}
+		subgraph parameterpythoncode{
+		ParameterPythonCode	[shape=oval, color=red2, label="ParameterPythonCode"];
+		ParameterPythonCode -> ParamData;
+		}
+		subgraph methodpythoncode{
+		MethodPythonCode	[shape=oval, color=red2, label="MethodPythonCode"];
+		MethodPythonCode -> MethodData;
+		}
+		subgraph statevarpythoncode{
+		StateVarPythonCode	[shape=oval, color=red2, label="StateVarPythonCode"];
+		StateVarPythonCode -> Doc;
+		}
+		subgraph classpythoncode{
+		ClassPythonCode	[shape=oval, color=red2, label="ClassPythonCode"];
+		ClassPythonCode -> Doc;
+		}
+		subgraph modulepythoncode{
+		ModulePythonCode	[shape=oval, color=red2, label="ModulePythonCode"];
+		ModulePythonCode -> ModData;
+		}
+		subgraph blockcommentpythoncode{
+		BlockCommentPythonCode	[shape=oval, color=red2, label="BlockCommentPythonCode"];
+		BlockCommentPythonCode -> Doc;
+		}
+	}
+	subgraph swiftrenderer {
+		subgraph swiftcodea{
+		SwiftCodea	[shape=oval, color=darkgreen, label="SwiftCodea"];
+		SwiftCodea -> a;
+		}
+		subgraph programswiftcode{
+		ProgramSwiftCode	[shape=oval, color=red2, label="ProgramSwiftCode"];
+		ProgramSwiftCode -> ProgData;
+		}
+		subgraph fileswiftcode{
+		FileSwiftCode	[shape=oval, color=red2, label="FileSwiftCode"];
+		FileSwiftCode -> FileData;
+		}
+		subgraph importswiftcode{
+		ImportSwiftCode	[shape=oval, color=red2, label="ImportSwiftCode"];
+		ImportSwiftCode -> Doc;
+		}
+		subgraph permanenceswiftcode{
+		PermanenceSwiftCode	[shape=oval, color=red2, label="PermanenceSwiftCode"];
+		PermanenceSwiftCode -> Doc;
+		}
+		subgraph bodyswiftcode{
+		BodySwiftCode	[shape=oval, color=red2, label="BodySwiftCode"];
+		BodySwiftCode -> Doc;
+		}
+		subgraph blockswiftcode{
+		BlockSwiftCode	[shape=oval, color=red2, label="BlockSwiftCode"];
+		BlockSwiftCode -> Doc;
+		}
+		subgraph typeswiftcode{
+		TypeSwiftCode	[shape=oval, color=red2, label="TypeSwiftCode"];
+		TypeSwiftCode -> TypeData;
+		}
+		subgraph unaryopswiftcode{
+		UnaryOpSwiftCode	[shape=oval, color=red2, label="UnaryOpSwiftCode"];
+		UnaryOpSwiftCode -> OpData;
+		}
+		subgraph binaryopswiftcode{
+		BinaryOpSwiftCode	[shape=oval, color=red2, label="BinaryOpSwiftCode"];
+		BinaryOpSwiftCode -> OpData;
+		}
+		subgraph variableswiftcode{
+		VariableSwiftCode	[shape=oval, color=red2, label="VariableSwiftCode"];
+		VariableSwiftCode -> VarData;
+		}
+		subgraph valueswiftcode{
+		ValueSwiftCode	[shape=oval, color=red2, label="ValueSwiftCode"];
+		ValueSwiftCode -> ValData;
+		}
+		subgraph functionswiftcode{
+		FunctionSwiftCode	[shape=oval, color=red2, label="FunctionSwiftCode"];
+		FunctionSwiftCode -> FuncData;
+		}
+		subgraph thunkswiftcode{
+		ThunkSwiftCode	[shape=oval, color=red2, label="ThunkSwiftCode"];
+		ThunkSwiftCode -> CommonThunkVS;
+		}
+		subgraph statementswiftcode{
+		StatementSwiftCode	[shape=oval, color=red2, label="StatementSwiftCode"];
+		StatementSwiftCode -> DocTerminator;
+		}
+		subgraph scopeswiftcode{
+		ScopeSwiftCode	[shape=oval, color=red2, label="ScopeSwiftCode"];
+		ScopeSwiftCode -> Doc;
+		}
+		subgraph methodtypeswiftcode{
+		MethodTypeSwiftCode	[shape=oval, color=red2, label="MethodTypeSwiftCode"];
+		MethodTypeSwiftCode -> TypeData;
+		}
+		subgraph parameterswiftcode{
+		ParameterSwiftCode	[shape=oval, color=red2, label="ParameterSwiftCode"];
+		ParameterSwiftCode -> ParamData;
+		}
+		subgraph methodswiftcode{
+		MethodSwiftCode	[shape=oval, color=red2, label="MethodSwiftCode"];
+		MethodSwiftCode -> MethodData;
+		}
+		subgraph statevarswiftcode{
+		StateVarSwiftCode	[shape=oval, color=red2, label="StateVarSwiftCode"];
+		StateVarSwiftCode -> Doc;
+		}
+		subgraph classswiftcode{
+		ClassSwiftCode	[shape=oval, color=red2, label="ClassSwiftCode"];
+		ClassSwiftCode -> Doc;
+		}
+		subgraph moduleswiftcode{
+		ModuleSwiftCode	[shape=oval, color=red2, label="ModuleSwiftCode"];
+		ModuleSwiftCode -> ModData;
+		}
+		subgraph blockcommentswiftcode{
+		BlockCommentSwiftCode	[shape=oval, color=red2, label="BlockCommentSwiftCode"];
+		BlockCommentSwiftCode -> Doc;
+		}
+	}
+	subgraph ast {
+		subgraph binddata{
+		BindData	[shape=oval, color=cyan3, label="BindData"];
+		BindData -> Binding;
+		BindData -> Doc;
+		}
+		subgraph filedata{
+		FileData	[shape=oval, color=cyan3, label="FileData"];
+		FileData -> FilePath;
+		FileData -> ModData;
+		}
+		subgraph funcdata{
+		FuncData	[shape=oval, color=cyan3, label="FuncData"];
+		FuncData -> TypeData;
+		FuncData -> Doc;
+		}
+		subgraph moddata{
+		ModData	[shape=oval, color=cyan3, label="ModData"];
+		ModData -> String;
+		ModData -> Doc;
+		}
+		subgraph opdata{
+		OpData	[shape=oval, color=cyan3, label="OpData"];
+		OpData -> Int;
+		OpData -> Doc;
+		}
+		subgraph paramdata{
+		ParamData	[shape=oval, color=cyan3, label="ParamData"];
+		ParamData -> VarData;
+		ParamData -> Doc;
+		}
+		subgraph progdata{
+		ProgData	[shape=oval, color=cyan3, label="ProgData"];
+		ProgData -> String;
+		ProgData -> FileData;
+		}
+		subgraph statevardata{
+		StateVarData	[shape=oval, color=cyan3, label="StateVarData"];
+		StateVarData -> ScopeTag;
+		StateVarData -> Doc;
+		}
+		subgraph typedata{
+		TypeData	[shape=oval, color=cyan3, label="TypeData"];
+		TypeData -> CodeType;
+		TypeData -> String;
+		TypeData -> Doc;
+		}
+		subgraph valdata{
+		ValData	[shape=oval, color=cyan3, label="ValData"];
+		ValData -> MaybeInt;
+		ValData -> MaybeInteger;
+		ValData -> TypeData;
+		ValData -> Doc;
+		}
+		subgraph vardata{
+		VarData	[shape=oval, color=cyan3, label="VarData"];
+		VarData -> Binding;
+		VarData -> String;
+		VarData -> TypeData;
+		VarData -> Doc;
+		}
+		subgraph terminator{
+		Terminator	[shape=oval, color=darkviolet, label="Terminator"];
+		}
+		subgraph scopetag{
+		ScopeTag	[shape=oval, color=darkviolet, label="ScopeTag"];
+		}
+		subgraph qualifiedname{
+		QualifiedName	[shape=oval, color=darkviolet, label="QualifiedName"];
+		QualifiedName -> String;
+		QualifiedName -> QualifiedName;
+		}
+		subgraph filetype{
+		FileType	[shape=oval, color=darkviolet, label="FileType"];
+		}
+		subgraph binding{
+		Binding	[shape=oval, color=darkviolet, label="Binding"];
+		Binding -> Binding;
+		Binding -> a;
+		}
+		subgraph commonthunks{
+		CommonThunks	[shape=oval, color=darkviolet, label="CommonThunks"];
+		}
+		subgraph methoddata{
+		MethodData	[shape=oval, color=darkgreen, label="MethodData"];
+		MethodData -> Doc;
+		}
+	}
+	subgraph clasess {
+	}
+	subgraph codeanalyiss {
+		subgraph exceptiontype{
+		ExceptionType	[shape=oval, color=darkviolet, label="ExceptionType"];
+		ExceptionType -> String;
+		}
+	}
+	subgraph codeinfo {
+		subgraph codeinfoa{
+		CodeInfoa	[shape=oval, color=darkgreen, label="CodeInfoa"];
+		CodeInfoa -> a;
+		}
+		subgraph programcodeinfo{
+		ProgramCodeInfo	[shape=oval, color=red2, label="ProgramCodeInfo"];
+		ProgramCodeInfo -> GOOLState;
+		}
+		subgraph filecodeinfo{
+		FileCodeInfo	[shape=oval, color=red2, label="FileCodeInfo"];
+		}
+		subgraph permanencecodeinfo{
+		PermanenceCodeInfo	[shape=oval, color=red2, label="PermanenceCodeInfo"];
+		}
+		subgraph bodycodeinfo{
+		BodyCodeInfo	[shape=oval, color=red2, label="BodyCodeInfo"];
+		}
+		subgraph blockcodeinfo{
+		BlockCodeInfo	[shape=oval, color=red2, label="BlockCodeInfo"];
+		}
+		subgraph typecodeinfo{
+		TypeCodeInfo	[shape=oval, color=red2, label="TypeCodeInfo"];
+		TypeCodeInfo -> String;
+		}
+		subgraph variablecodeinfo{
+		VariableCodeInfo	[shape=oval, color=red2, label="VariableCodeInfo"];
+		}
+		subgraph valuecodeinfo{
+		ValueCodeInfo	[shape=oval, color=red2, label="ValueCodeInfo"];
+		}
+		subgraph functioncodeinfo{
+		FunctionCodeInfo	[shape=oval, color=red2, label="FunctionCodeInfo"];
+		}
+		subgraph thunkcodeinfo{
+		ThunkCodeInfo	[shape=oval, color=red2, label="ThunkCodeInfo"];
+		}
+		subgraph statementcodeinfo{
+		StatementCodeInfo	[shape=oval, color=red2, label="StatementCodeInfo"];
+		}
+		subgraph scopecodeinfo{
+		ScopeCodeInfo	[shape=oval, color=red2, label="ScopeCodeInfo"];
+		ScopeCodeInfo -> ScopeTag;
+		}
+		subgraph parametercodeinfo{
+		ParameterCodeInfo	[shape=oval, color=red2, label="ParameterCodeInfo"];
+		}
+		subgraph methodcodeinfo{
+		MethodCodeInfo	[shape=oval, color=red2, label="MethodCodeInfo"];
+		}
+		subgraph statevarcodeinfo{
+		StateVarCodeInfo	[shape=oval, color=red2, label="StateVarCodeInfo"];
+		}
+		subgraph classcodeinfo{
+		ClassCodeInfo	[shape=oval, color=red2, label="ClassCodeInfo"];
+		}
+		subgraph modulecodeinfo{
+		ModuleCodeInfo	[shape=oval, color=red2, label="ModuleCodeInfo"];
+		}
+	}
+	subgraph codetype {
+		subgraph codetype{
+		CodeType	[shape=oval, color=darkviolet, label="CodeType"];
+		}
+		subgraph classname{
+		ClassName	[shape=oval, color=red2, label="ClassName"];
+		ClassName -> String;
+		}
+	}
+	subgraph helpers {
+	}
+	subgraph interfacecommon {
+		subgraph label{
+		Label	[shape=oval, color=red2, label="Label"];
+		Label -> String;
+		}
+		subgraph library{
+		Library	[shape=oval, color=red2, label="Library"];
+		Library -> String;
+		}
+		subgraph msbodya{
+		MSBodya	[shape=oval, color=red2, label="MSBodya"];
+		MSBodya -> MSaBodya;
+		}
+		subgraph msblocka{
+		MSBlocka	[shape=oval, color=red2, label="MSBlocka"];
+		MSBlocka -> MSaBlocka;
+		}
+		subgraph vstypea{
+		VSTypea	[shape=oval, color=red2, label="VSTypea"];
+		VSTypea -> VSaTypea;
+		}
+		subgraph svariablea{
+		SVariablea	[shape=oval, color=red2, label="SVariablea"];
+		SVariablea -> VSaVariablea;
+		}
+		subgraph svaluea{
+		SValuea	[shape=oval, color=red2, label="SValuea"];
+		SValuea -> VSaValuea;
+		}
+		subgraph namedargsr{
+		NamedArgsr	[shape=oval, color=red2, label="NamedArgsr"];
+		NamedArgsr -> SVariablerSValuer;
+		}
+		subgraph mixedcallr{
+		MixedCallr	[shape=oval, color=red2, label="MixedCallr"];
+		MixedCallr -> LabelVSTyperSValuerNamedArgsrSValuer;
+		}
+		subgraph mixedctorcallr{
+		MixedCtorCallr	[shape=oval, color=red2, label="MixedCtorCallr"];
+		MixedCtorCallr -> VSTyperSValuerNamedArgsrSValuer;
+		}
+		subgraph poscallr{
+		PosCallr	[shape=oval, color=red2, label="PosCallr"];
+		PosCallr -> LabelVSTyperSValuerSValuer;
+		}
+		subgraph posctorcallr{
+		PosCtorCallr	[shape=oval, color=red2, label="PosCtorCallr"];
+		PosCtorCallr -> VSTyperSValuerSValuer;
+		}
+		subgraph vsthunka{
+		VSThunka	[shape=oval, color=red2, label="VSThunka"];
+		VSThunka -> VSaThunka;
+		}
+		subgraph msstatementa{
+		MSStatementa	[shape=oval, color=red2, label="MSStatementa"];
+		MSStatementa -> MSaStatementa;
+		}
+		subgraph inoutcallr{
+		InOutCallr	[shape=oval, color=red2, label="InOutCallr"];
+		InOutCallr -> LabelSValuerSVariablerSVariabler;
+		}
+		subgraph msparametera{
+		MSParametera	[shape=oval, color=red2, label="MSParametera"];
+		MSParametera -> MSaParametera;
+		}
+		subgraph smethoda{
+		SMethoda	[shape=oval, color=red2, label="SMethoda"];
+		SMethoda -> MSaMethoda;
+		}
+		subgraph initializersr{
+		Initializersr	[shape=oval, color=red2, label="Initializersr"];
+		Initializersr -> SVariablerSValuer;
+		}
+		subgraph inoutfuncr{
+		InOutFuncr	[shape=oval, color=red2, label="InOutFuncr"];
+		InOutFuncr -> SVariablerSVariablerSVariabler;
+		}
+		subgraph docinoutfuncr{
+		DocInOutFuncr	[shape=oval, color=red2, label="DocInOutFuncr"];
+		DocInOutFuncr -> StringStringSVariabler;
+		}
+	}
+	subgraph interfacegool {
+		subgraph gsprograma{
+		GSPrograma	[shape=oval, color=red2, label="GSPrograma"];
+		GSPrograma -> GSaPrograma;
+		}
+		subgraph sfilea{
+		SFilea	[shape=oval, color=red2, label="SFilea"];
+		SFilea -> FSaFilea;
+		}
+		subgraph fsmodulea{
+		FSModulea	[shape=oval, color=red2, label="FSModulea"];
+		FSModulea -> FSaModulea;
+		}
+		subgraph sclassa{
+		SClassa	[shape=oval, color=red2, label="SClassa"];
+		SClassa -> CSaClassa;
+		}
+		subgraph csstatevara{
+		CSStateVara	[shape=oval, color=red2, label="CSStateVara"];
+		CSStateVara -> CSaStateVara;
+		}
+		subgraph vsfunctiona{
+		VSFunctiona	[shape=oval, color=red2, label="VSFunctiona"];
+		VSFunctiona -> VSaFunctiona;
+		}
+	}
+	subgraph interfaceproc {
+		subgraph gsprograma{
+		GSPrograma	[shape=oval, color=red2, label="GSPrograma"];
+		GSPrograma -> GSaPrograma;
+		}
+		subgraph sfilea{
+		SFilea	[shape=oval, color=red2, label="SFilea"];
+		SFilea -> FSaFilea;
+		}
+		subgraph fsmodulea{
+		FSModulea	[shape=oval, color=red2, label="FSModulea"];
+		FSModulea -> FSaModulea;
+		}
+	}
+	subgraph languagerenderer {
+		subgraph funcdocrenderer{
+		FuncDocRenderer	[shape=oval, color=red2, label="FuncDocRenderer"];
+		FuncDocRenderer -> StringStringStringStringString;
+		}
+		subgraph classdocrenderer{
+		ClassDocRenderer	[shape=oval, color=red2, label="ClassDocRenderer"];
+		ClassDocRenderer -> StringString;
+		}
+		subgraph moduledocrenderer{
+		ModuleDocRenderer	[shape=oval, color=red2, label="ModuleDocRenderer"];
+		ModuleDocRenderer -> StringStringStringStringString;
+		}
+	}
+	subgraph rendererclasess {
+		subgraph vsunopa{
+		VSUnOpa	[shape=oval, color=red2, label="VSUnOpa"];
+		VSUnOpa -> VSaUnaryOpa;
+		}
+		subgraph vsbinopa{
+		VSBinOpa	[shape=oval, color=red2, label="VSBinOpa"];
+		VSBinOpa -> VSaBinaryOpa;
+		}
+		subgraph msmthdtypea{
+		MSMthdTypea	[shape=oval, color=red2, label="MSMthdTypea"];
+		MSMthdTypea -> MSaMethodTypea;
+		}
+		subgraph parentspec{
+		ParentSpec	[shape=oval, color=red2, label="ParentSpec"];
+		ParentSpec -> Doc;
+		}
+	}
+	subgraph state {
+		subgraph goolstate{
+		GOOLState	[shape=oval, color=cyan3, label="GOOLState"];
+		GOOLState -> FilePath;
+		GOOLState -> MaybeFilePath;
+		GOOLState -> MapStringClassName;
+		GOOLState -> MapQualifiedNameExceptionType;
+		GOOLState -> MapQualifiedNameQualifiedName;
+		GOOLState -> Bool;
+		}
+		subgraph filestate{
+		FileState	[shape=oval, color=cyan3, label="FileState"];
+		FileState -> GOOLState;
+		FileState -> String;
+		FileState -> FileType;
+		FileState -> Bool;
+		FileState -> ClassName;
+		FileState -> Doc;
+		}
+		subgraph classstate{
+		ClassState	[shape=oval, color=cyan3, label="ClassState"];
+		ClassState -> FileState;
+		ClassState -> ClassName;
+		}
+		subgraph methodstate{
+		MethodState	[shape=oval, color=cyan3, label="MethodState"];
+		MethodState -> ClassState;
+		MethodState -> String;
+		MethodState -> MapStringInt;
+		MethodState -> Bool;
+		MethodState -> ExceptionType;
+		MethodState -> QualifiedName;
+		MethodState -> ScopeTag;
+		MethodState -> Index;
+		}
+		subgraph valuestate{
+		ValueState	[shape=oval, color=darkgreen, label="ValueState"];
+		}
+		subgraph index{
+		Index	[shape=oval, color=red2, label="Index"];
+		Index -> Integer;
+		}
+		subgraph gs{
+		GS	[shape=oval, color=red2, label="GS"];
+		GS -> StateGOOLState;
+		}
+		subgraph fs{
+		FS	[shape=oval, color=red2, label="FS"];
+		FS -> StateFileState;
+		}
+		subgraph cs{
+		CS	[shape=oval, color=red2, label="CS"];
+		CS -> StateClassState;
+		}
+		subgraph ms{
+		MS	[shape=oval, color=red2, label="MS"];
+		MS -> StateMethodState;
+		}
+		subgraph vs{
+		VS	[shape=oval, color=red2, label="VS"];
+		VS -> StateValueState;
+		}
+	}
+	subgraph drails {
+	}
+}

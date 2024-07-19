@@ -1,0 +1,4 @@
+digraph tsintro{
+TSIntro	[shape=oval, color=darkviolet, label="TSIntro"];
+TSIntro -> TConvention;
+}

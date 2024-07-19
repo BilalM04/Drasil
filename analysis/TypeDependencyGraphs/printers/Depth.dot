@@ -1,0 +1,4 @@
+digraph depth{
+Depth	[shape=oval, color=red2, label="Depth"];
+Depth -> Int;
+}

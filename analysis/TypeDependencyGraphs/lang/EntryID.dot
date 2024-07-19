@@ -1,0 +1,4 @@
+digraph entryid{
+EntryID	[shape=oval, color=red2, label="EntryID"];
+EntryID -> String;
+}

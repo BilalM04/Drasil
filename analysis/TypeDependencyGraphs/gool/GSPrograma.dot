@@ -1,0 +1,4 @@
+digraph gsprograma{
+GSPrograma	[shape=oval, color=red2, label="GSPrograma"];
+GSPrograma -> GSaPrograma;
+}

@@ -1,0 +1,4 @@
+digraph library{
+Library	[shape=oval, color=red2, label="Library"];
+Library -> String;
+}

@@ -1,0 +1,4 @@
+digraph programcodeinfo{
+ProgramCodeInfo	[shape=oval, color=red2, label="ProgramCodeInfo"];
+ProgramCodeInfo -> GOOLState;
+}

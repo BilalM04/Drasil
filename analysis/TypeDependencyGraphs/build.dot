@@ -1,0 +1,66 @@
+digraph alltypes {
+	subgraph ast {
+		subgraph rule{
+		Rule	[shape=oval, color=darkviolet, label="Rule"];
+		Rule -> Annotation;
+		Rule -> Target;
+		Rule -> Dependencies;
+		Rule -> Type;
+		Rule -> Command;
+		}
+		subgraph command{
+		Command	[shape=oval, color=darkviolet, label="Command"];
+		Command -> MakeString;
+		Command -> CommandOpts;
+		}
+		subgraph commandopts{
+		CommandOpts	[shape=oval, color=darkviolet, label="CommandOpts"];
+		}
+		subgraph type{
+		Type	[shape=oval, color=darkviolet, label="Type"];
+		}
+		subgraph makefile{
+		Makefile	[shape=oval, color=darkgreen, label="Makefile"];
+		Makefile -> Rule;
+		}
+		subgraph annotation{
+		Annotation	[shape=oval, color=red2, label="Annotation"];
+		Annotation -> Comment;
+		}
+		subgraph target{
+		Target	[shape=oval, color=red2, label="Target"];
+		Target -> MakeString;
+		}
+		subgraph dependencies{
+		Dependencies	[shape=oval, color=red2, label="Dependencies"];
+		Dependencies -> Target;
+		}
+	}
+	subgraph helpers {
+	}
+	subgraph import {
+	}
+	subgraph makestring {
+		subgraph makestring{
+		MakeString	[shape=oval, color=darkviolet, label="MakeString"];
+		MakeString -> String;
+		}
+		subgraph mvar{
+		MVar	[shape=oval, color=darkviolet, label="MVar"];
+		MVar -> VarName;
+		MVar -> VarVal;
+		}
+		subgraph varname{
+		VarName	[shape=oval, color=red2, label="VarName"];
+		VarName -> String;
+		}
+		subgraph varval{
+		VarVal	[shape=oval, color=red2, label="VarVal"];
+		VarVal -> String;
+		}
+	}
+	subgraph print {
+	}
+	subgraph drails {
+	}
+}

@@ -1,0 +1,4 @@
+digraph msbodya{
+MSBodya	[shape=oval, color=red2, label="MSBodya"];
+MSBodya -> MSaBodya;
+}

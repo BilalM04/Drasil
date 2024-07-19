@@ -1,0 +1,4 @@
+digraph identifier{
+Identifier	[shape=oval, color=red2, label="Identifier"];
+Identifier -> String;
+}

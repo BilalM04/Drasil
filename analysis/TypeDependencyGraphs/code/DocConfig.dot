@@ -1,0 +1,6 @@
+digraph docconfig{
+DocConfig	[shape=oval, color=cyan3, label="DocConfig"];
+DocConfig -> Comments;
+DocConfig -> Verbosity;
+DocConfig -> Visibility;
+}

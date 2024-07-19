@@ -1,0 +1,46 @@
+digraph alltypes {
+	subgraph formats {
+		subgraph docchoices{
+		DocChoices	[shape=oval, color=cyan3, label="DocChoices"];
+		DocChoices -> DocType;
+		DocChoices -> Format;
+		}
+		subgraph docspec{
+		DocSpec	[shape=oval, color=darkviolet, label="DocSpec"];
+		DocSpec -> DocChoices;
+		DocSpec -> Filename;
+		}
+		subgraph docclass{
+		DocClass	[shape=oval, color=darkviolet, label="DocClass"];
+		DocClass -> Maybe;
+		DocClass -> String;
+		}
+		subgraph exdoc{
+		ExDoc	[shape=oval, color=darkviolet, label="ExDoc"];
+		ExDoc -> Maybe;
+		ExDoc -> String;
+		}
+		subgraph usepackages{
+		UsePackages	[shape=oval, color=darkgreen, label="UsePackages"];
+		UsePackages -> String;
+		}
+		subgraph filename{
+		Filename	[shape=oval, color=red2, label="Filename"];
+		Filename -> String;
+		}
+	}
+	subgraph dump {
+		subgraph path{
+		Path	[shape=oval, color=red2, label="Path"];
+		Path -> String;
+		}
+		subgraph targetfile{
+		TargetFile	[shape=oval, color=red2, label="TargetFile"];
+		TargetFile -> String;
+		}
+	}
+	subgraph generate {
+	}
+	subgraph typececkh {
+	}
+}

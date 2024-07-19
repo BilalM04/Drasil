@@ -1,0 +1,4 @@
+digraph vsfunctiona{
+VSFunctiona	[shape=oval, color=red2, label="VSFunctiona"];
+VSFunctiona -> VSaFunctiona;
+}

@@ -1,0 +1,4 @@
+digraph docdesc{
+DocDesc	[shape=oval, color=red2, label="DocDesc"];
+DocDesc -> DocSection;
+}

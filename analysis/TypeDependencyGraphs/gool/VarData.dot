@@ -1,0 +1,7 @@
+digraph vardata{
+VarData	[shape=oval, color=cyan3, label="VarData"];
+VarData -> Binding;
+VarData -> String;
+VarData -> TypeData;
+VarData -> Doc;
+}

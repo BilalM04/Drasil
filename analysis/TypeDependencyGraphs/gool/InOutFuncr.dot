@@ -1,0 +1,4 @@
+digraph inoutfuncr{
+InOutFuncr	[shape=oval, color=red2, label="InOutFuncr"];
+InOutFuncr -> SVariablerSVariablerSVariabler;
+}

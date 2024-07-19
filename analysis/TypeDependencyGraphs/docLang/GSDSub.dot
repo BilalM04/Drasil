@@ -1,0 +1,5 @@
+digraph gsdsub{
+GSDSub	[shape=oval, color=darkviolet, label="GSDSub"];
+GSDSub -> Contents;
+GSDSub -> GSDSub;
+}

@@ -1,0 +1,4 @@
+digraph valueswiftcode{
+ValueSwiftCode	[shape=oval, color=red2, label="ValueSwiftCode"];
+ValueSwiftCode -> ValData;
+}

@@ -1,0 +1,4 @@
+digraph variablepythoncode{
+VariablePythonCode	[shape=oval, color=red2, label="VariablePythonCode"];
+VariablePythonCode -> VarData;
+}

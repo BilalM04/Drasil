@@ -1,0 +1,6 @@
+digraph definitiontype{
+DefinitionType	[shape=oval, color=cyan3, label="DefinitionType"];
+DefinitionType -> CodeChunk;
+DefinitionType -> CodeExpr;
+DefinitionType -> DefinitionType;
+}

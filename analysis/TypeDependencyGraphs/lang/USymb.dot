@@ -1,0 +1,5 @@
+digraph usymb{
+USymb	[shape=oval, color=darkgreen, label="USymb"];
+USymb -> Symbol;
+USymb -> Integer;
+}

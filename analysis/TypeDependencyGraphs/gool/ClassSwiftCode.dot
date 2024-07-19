@@ -1,0 +1,4 @@
+digraph classswiftcode{
+ClassSwiftCode	[shape=oval, color=red2, label="ClassSwiftCode"];
+ClassSwiftCode -> Doc;
+}

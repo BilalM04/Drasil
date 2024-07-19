@@ -1,0 +1,4 @@
+digraph openclose{
+OpenClose	[shape=oval, color=darkviolet, label="OpenClose"];
+OpenClose -> String;
+}

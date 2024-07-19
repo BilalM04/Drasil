@@ -1,0 +1,4 @@
+digraph showtableofcontents{
+ShowTableOfContents	[shape=oval, color=darkviolet, label="ShowTableOfContents"];
+ShowTableOfContents -> Document;
+}

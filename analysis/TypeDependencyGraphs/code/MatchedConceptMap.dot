@@ -1,0 +1,4 @@
+digraph matchedconceptmap{
+MatchedConceptMap	[shape=oval, color=red2, label="MatchedConceptMap"];
+MatchedConceptMap -> MapUIDCodeConcept;
+}

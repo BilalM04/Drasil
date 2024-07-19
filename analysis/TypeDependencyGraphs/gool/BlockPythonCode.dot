@@ -1,0 +1,4 @@
+digraph blockpythoncode{
+BlockPythonCode	[shape=oval, color=red2, label="BlockPythonCode"];
+BlockPythonCode -> Doc;
+}

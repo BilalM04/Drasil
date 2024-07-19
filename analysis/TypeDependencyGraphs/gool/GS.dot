@@ -1,0 +1,4 @@
+digraph gs{
+GS	[shape=oval, color=red2, label="GS"];
+GS -> StateGOOLState;
+}

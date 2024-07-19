@@ -1,0 +1,4 @@
+digraph version{
+Version	[shape=oval, color=red2, label="Version"];
+Version -> String;
+}

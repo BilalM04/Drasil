@@ -1,0 +1,4 @@
+digraph permanencejavacode{
+PermanenceJavaCode	[shape=oval, color=red2, label="PermanenceJavaCode"];
+PermanenceJavaCode -> Doc;
+}

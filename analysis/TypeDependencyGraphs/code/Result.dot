@@ -1,0 +1,4 @@
+digraph result{
+Result	[shape=oval, color=darkviolet, label="Result"];
+Result -> CodeVarChunk;
+}

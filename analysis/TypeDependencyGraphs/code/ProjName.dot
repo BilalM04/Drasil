@@ -1,0 +1,4 @@
+digraph projname{
+ProjName	[shape=oval, color=red2, label="ProjName"];
+ProjName -> String;
+}

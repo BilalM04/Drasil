@@ -1,0 +1,4 @@
+digraph symbolmap{
+SymbolMap	[shape=oval, color=red2, label="SymbolMap"];
+SymbolMap -> UMapQuantityDict;
+}
