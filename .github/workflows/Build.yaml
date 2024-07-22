@@ -88,6 +88,8 @@ jobs:
     name: "Compile Gool"
     runs-on: ubuntu-22.04
     steps:
+      - uses: actions/checkout@v4
+
       - name: "Compile GOOL examples"
         run: make codegenTest
 
@@ -99,6 +101,8 @@ jobs:
     name: "Compile TeX"
     runs-on: ubuntu-22.04
     steps:
+      - uses: actions/checkout@v4
+
       - name: "Compile generated TeX artifacts"
         run: make -j tex SUMMARIZE_TEX=yes
         if: ${{ steps.changes.outputs.tex == 'true' || fromJSON(env.is_deployment) }}
@@ -108,6 +112,8 @@ jobs:
     name: "Create Doxygen"
     runs-on: ubuntu-22.04
     steps:
+      - uses: actions/checkout@v4
+
       - name: "Create Doxygen for generated software artifacts"
         run: make doxygen
 
@@ -116,6 +122,8 @@ jobs:
     name: "Generate Haddock"
     runs-on: ubuntu-22.04
     steps:
+      - uses: actions/checkout@v4
+
       - name: "Generate Haddock docs (as test)"
         run: make docs
         if: ${{ !fromJSON(env.is_deployment) }}
@@ -129,6 +137,8 @@ jobs:
     name: "Dependency Graphs"
     runs-on: ubuntu-22.04
     steps:
+      - uses: actions/checkout@v4
+
       - name: "Generate module dependency graphs"
         run: make graphs
 
@@ -137,6 +147,8 @@ jobs:
     name: "Analysis"
     runs-on: ubuntu-22.04
     steps:
+      - uses: actions/checkout@v4
+
       - name: "Analyze Drasil code"
         run: make analysis
 
@@ -149,6 +161,8 @@ jobs:
     name: "Deploy Website"
     runs-on: ubuntu-22.04
     steps:
+      - uses: actions/checkout@v4
+
       - name: "Build trace graphs" # only needed in deployments, not required for tests
         run: make tracegraphs
         if: ${{ fromJSON(env.is_deployment) }}
