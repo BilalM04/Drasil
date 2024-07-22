@@ -95,6 +95,13 @@ jobs:
       - name: "Create Doxygen for generated software artifacts"
         run: make doxygen
 
+      - name: "Cache Haddock docs"
+        uses: actions/cache@v4.0.2
+        with:
+          path: |
+            code/docs/
+          key: ${{ runner.os }}-docs
+
       - name: "Generate Haddock docs (as test)"
         run: make docs
         if: ${{ !fromJSON(env.is_deployment) }}
