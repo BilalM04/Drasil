@@ -24,9 +24,10 @@ jobs:
         uses: styfle/cancel-workflow-action@0.12.1
         with:
           access_token: ${{ github.token }}
+
   build:
     needs: auto-cancel
-    name: "Build & Deploy"
+    name: "Build"
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
@@ -82,19 +83,39 @@ jobs:
       - name: "Test built artifacts against stable"
         run: make stackArgs="--no-terminal" GHCFLAGS="-Werror" NOISY=yes
 
+  compile-gool:
+    needs: build
+    name: "Compile Gool"
+    runs-on: ubuntu-22.04
+    steps:
       - name: "Compile GOOL examples"
         run: make codegenTest
-
-      - name: "Compile generated TeX artifacts"
-        run: make -j tex SUMMARIZE_TEX=yes
-        if: ${{ steps.changes.outputs.tex == 'true' || fromJSON(env.is_deployment) }}
 
       - name: "Compile generated software artifacts"
         run: make gool
 
+  compile-tex:
+    needs: build
+    name: "Compile TeX"
+    runs-on: ubuntu-22.04
+    steps:
+      - name: "Compile generated TeX artifacts"
+        run: make -j tex SUMMARIZE_TEX=yes
+        if: ${{ steps.changes.outputs.tex == 'true' || fromJSON(env.is_deployment) }}
+
+  create-dox:
+    needs: build
+    name: "Create Doxygen"
+    runs-on: ubuntu-22.04
+    steps:
       - name: "Create Doxygen for generated software artifacts"
         run: make doxygen
 
+  docs:
+    needs: build
+    name: "Generate Haddock"
+    runs-on: ubuntu-22.04
+    steps:
       - name: "Generate Haddock docs (as test)"
         run: make docs
         if: ${{ !fromJSON(env.is_deployment) }}
@@ -103,9 +124,19 @@ jobs:
         run: FULL=1 make docs
         if: ${{ fromJSON(env.is_deployment) }}
 
+  dep-graphs:
+    needs: build
+    name: "Dependency Graphs"
+    runs-on: ubuntu-22.04
+    steps:
       - name: "Generate module dependency graphs"
         run: make graphs
 
+  analysis:
+    needs: build
+    name: "Analysis"
+    runs-on: ubuntu-22.04
+    steps:
       - name: "Analyze Drasil code"
         run: make analysis
 
@@ -113,6 +144,11 @@ jobs:
         run: make convertAnalyzed
         if: ${{ fromJSON(env.is_deployment) }}
 
+  deployment:
+    needs: [compile-gool, compile-tex, create-dox, docs, dep-graphs, analysis]
+    name: "Deploy Website"
+    runs-on: ubuntu-22.04
+    steps:
       - name: "Build trace graphs" # only needed in deployments, not required for tests
         run: make tracegraphs
         if: ${{ fromJSON(env.is_deployment) }}
