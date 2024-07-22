@@ -68,6 +68,8 @@ jobs:
             code/.stack-work/
             code/website/.stack-work/
             ~/.local/bin/graphmod
+            ~/.texlive2023/texmf-var/
+            ~/.texlive2023/texmf-config/
           key: ${{ runner.os }}-store-${{ hashFiles('code/stack.yaml') }}
 
       - name: "Clean previous run"
