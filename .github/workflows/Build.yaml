@@ -68,6 +68,8 @@ jobs:
             code/.stack-work/
             code/website/.stack-work/
             ~/.local/bin/graphmod
+            ~/.texlive2023/texmf-var/
+            ~/.texlive2023/texmf-config/
           key: ${{ runner.os }}-store-${{ hashFiles('code/stack.yaml') }}
 
       - name: "Clean previous run"
@@ -85,9 +87,17 @@ jobs:
       - name: "Compile GOOL examples"
         run: make codegenTest
 
+      - name: "Cache generated TeX builds"
+        uses: actions/cache@v4.0.2
+        with:
+          path: code/build/**/**/PDF/
+          key: ${{ runner.os }}-tex-${{ hashFiles('code/build/**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-tex-
+
       - name: "Compile generated TeX artifacts"
         run: make tex SUMMARIZE_TEX=yes
-        if: steps.changes.tex.src == 'true'
+        if: ${{ steps.changes.outputs.tex == 'true' || fromJSON(env.is_deployment) }}
 
       - name: "Compile generated software artifacts"
         run: make gool
