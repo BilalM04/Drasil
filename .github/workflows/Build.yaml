@@ -117,6 +117,10 @@ jobs:
         run: make tracegraphs
         if: ${{ fromJSON(env.is_deployment) }}
 
+      - name: "Build mdBook Examples" # only needed in deployments, not required for tests
+        run: make mdbook_build
+        if: ${{ fromJSON(env.is_deployment) }}
+
       - name: "Build website generator"
         run: make website
 
