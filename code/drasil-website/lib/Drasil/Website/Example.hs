@@ -7,7 +7,7 @@ import Language.Drasil hiding (E)
 import SysInfo.Drasil (SystemInformation(..))
 import Language.Drasil.Code (Choices(..), Lang(..))
 import Data.Char (toLower)
-import Language.Drasil.Printers (Format(MDBook, HTML, TeX))
+import Language.Drasil.Printers (Format(..))
 
 import qualified Drasil.DblPend.Body as DblPend (fullSI)
 import qualified Drasil.GamePhysics.Body as GamePhysics (fullSI)
@@ -225,13 +225,14 @@ getSRSRef path format ex = makeURI refUID (getSRSPath path format ex) $ shortnam
     refUID = show format ++ "Ref" ++ ex
 
 -- | Get the paths of where each reference exist for SRS files. Some example abbreviations have spaces,
--- so we just filter those out. The suffix should only be either html or pdf.
+-- so we just filter those out.
 getSRSPath :: FilePath -> Format -> String -> FilePath
 getSRSPath path format ex = path ++ map toLower ex ++ "/SRS/" ++ show format ++ "/" ++ sufx format
   where
     sufx MDBook = "book"
     sufx HTML   = ex ++ "_SRS.html"
     sufx TeX    = ex ++ "_SRS.pdf"
+    sufx _      = error "You can only get paths for TeX/HTML/MDBook."
 
 -- | Get the file paths for generated code and doxygen locations.
 getCodePath, getDoxPath :: FilePath -> String -> String -> FilePath
