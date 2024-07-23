@@ -202,6 +202,7 @@ Plain :: Format
 HTML :: Format
 Jupyter :: Format
 MDBook :: Format
+instance GHC.Show.Show Language.Drasil.Format.Format
 instance GHC.Show.Show Language.Drasil.Format.DocType
 
 
