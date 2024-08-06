@@ -102,11 +102,11 @@ jobs:
         run: make doxygen
 
       - name: "Generate Haddock docs (as test)"
-        run: make docs
+        run: make -j docs
         if: ${{ !fromJSON(env.is_deployment) }}
 
       - name: "Generate Haddock docs (full + std)"
-        run: FULL=1 make docs
+        run: FULL=1 make -j docs
         if: ${{ fromJSON(env.is_deployment) }}
 
       - name: "Generate module dependency graphs"
