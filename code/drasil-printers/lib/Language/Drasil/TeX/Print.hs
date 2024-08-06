@@ -62,7 +62,7 @@ lo :: LayoutObj -> PrintingInformation -> D
 lo (Header d t l)         _ = sec d (spec t) %% label (spec l)
 lo (HDiv _ con _)        sm = print sm con -- FIXME ignoring 2 arguments?
 lo (Paragraph contents)   _ = toText $ newline (spec contents)
-lo (EqnBlock contents)    _ = makeEquation contents
+lo (EqnBlock contents)    _ = makeEquation contents 1
 lo (Table _ rows r bl t)  _ = toText $ makeTable rows (spec r) bl (spec t)
 lo (Definition _ ssPs l) sm = toText $ makeDefn sm ssPs $ spec l
 lo (List l)               _ = toText $ makeList l
@@ -75,6 +75,13 @@ lo (Graph ps w h c l)    _  = toText $ makeGraph
   (spec c) (spec l)
 lo (Cell _) _               = empty
 lo (CodeBlock _) _          = empty
+
+-- | Helper for converting layout objects into a more printable form.
+-- This function is specific to definitions.
+lo' :: LayoutObj -> PrintingInformation -> D
+lo' (HDiv _ con _)      sm = foldMap (`lo'` sm) con
+lo' (EqnBlock contents) _  = makeEquation contents 0.8
+lo' obj sm                 = lo obj sm
 
 -- | Converts layout objects into a document form.
 print :: PrintingInformation -> [LayoutObj] -> D
@@ -345,17 +352,17 @@ makeDefTable sm ps l = mkEnvArgBr "tabular" (col rr colAwidth ++ col (rr ++ "\\a
 
 -- | Helper that makes the rows of a definition table.
 makeDRows :: PrintingInformation -> [(String,[LayoutObj])] -> D
-makeDRows _  []         = error "No fields to create Defn table"
-makeDRows sm ls    = foldl1 (%%) $ map (\(f, d) -> dBoilerplate %%  pure (text (f ++ " & ")) <> print sm d) ls
+makeDRows _  []      = error "No fields to create Defn table"
+makeDRows sm ls      = foldl1 (%%) $ map (\(f, d) -> dBoilerplate %%  pure (text (f ++ " & ")) <> foldMap (`lo'` sm) d) ls
   where dBoilerplate = pure $ dbs <+> text "\\midrule"
 
 -----------------------------------------------------------------
 ------------------ EQUATION PRINTING------------------------
 -----------------------------------------------------------------
 
--- | Prints an equation.
-makeEquation :: Spec -> D
-makeEquation contents = toEqn (spec contents)
+-- | Prints an equation with a max width of scale * page width.
+makeEquation :: Spec -> Double -> D
+makeEquation contents scale = toEqn scale (spec contents)
 
   --TODO: Add auto-generated labels -> Need to be able to ensure labeling based
   --  on chunk (i.e. "eq:h_g" for h_g = ...

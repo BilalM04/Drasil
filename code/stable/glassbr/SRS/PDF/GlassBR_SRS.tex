@@ -15,6 +15,8 @@
 \usepackage{svg}
 \usepackage{float}
 \usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{calc}
 \usepackage{filecontents}
 \usepackage[backend=bibtex]{biblatex}
 \usepackage{url}
@@ -23,6 +25,15 @@
 \newcommand{\lt}{\ensuremath <}
 \newlist{symbDescription}{description}{1}
 \setlist[symbDescription]{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
+\newsavebox{\mybox}
+\newcommand{\resizeExpression}[2]{
+\savebox{\mybox}{$#1$}
+\ifdim\wd\mybox>#2\linewidth
+\resizebox{#2\textwidth}{!}{\usebox{\mybox}}
+\else
+\usebox{\mybox}
+\fi
+}
 \bibliography{bibfile}
 \title{Software Requirements Specification for GlassBR}
 \author{Nikitha Krithnan and W. Spencer Smith}
@@ -398,7 +409,7 @@ Label & Safety Probability
         
 \\ \midrule
 Equation & \begin{displaymath}
-           \mathit{isSafeProb}={P_{\text{f}}}\lt{}{P_{\text{f}\text{tol}}}
+           \resizeExpression{\mathit{isSafeProb}={P_{\text{f}}}\lt{}{P_{\text{f}\text{tol}}}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -430,7 +441,7 @@ Label & Safety Load
         
 \\ \midrule
 Equation & \begin{displaymath}
-           \mathit{isSafeLoad}=\mathit{capacity}\gt{}\mathit{Load}
+           \resizeExpression{\mathit{isSafeLoad}=\mathit{capacity}\gt{}\mathit{Load}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -476,20 +487,20 @@ Units & ${\text{m}}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           h=\frac{1}{1000}\,\begin{cases}
-                             2.16, & t=2.5\\
-                             2.59, & t=2.7\\
-                             2.92, & t=3.0\\
-                             3.78, & t=4.0\\
-                             4.57, & t=5.0\\
-                             5.56, & t=6.0\\
-                             7.42, & t=8.0\\
-                             9.02, & t=10.0\\
-                             11.91, & t=12.0\\
-                             15.09, & t=16.0\\
-                             18.26, & t=19.0\\
-                             21.44, & t=22.0
-                             \end{cases}
+           \resizeExpression{h=\frac{1}{1000}\,\begin{cases}
+                                               2.16, & t=2.5\\
+                                               2.59, & t=2.7\\
+                                               2.92, & t=3.0\\
+                                               3.78, & t=4.0\\
+                                               4.57, & t=5.0\\
+                                               5.56, & t=6.0\\
+                                               7.42, & t=8.0\\
+                                               9.02, & t=10.0\\
+                                               11.91, & t=12.0\\
+                                               15.09, & t=16.0\\
+                                               18.26, & t=19.0\\
+                                               21.44, & t=22.0
+                                               \end{cases}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -527,7 +538,7 @@ Units & Unitless
         
 \\ \midrule
 Equation & \begin{displaymath}
-           \mathit{LDF}=\left(\frac{{t_{\text{d}}}}{60}\right)^{\frac{m}{16}}
+           \resizeExpression{\mathit{LDF}=\left(\frac{{t_{\text{d}}}}{60}\right)^{\frac{m}{16}}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -537,7 +548,6 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & ${t_{\text{d}}}$ and $m$ come from \hyperref[assumpSV]{A:standardValues}.
-        
         $\mathit{LDF}$ is assumed to be constant (from \hyperref[assumpLDFC]{A:ldfConstant}).
         
 \\ \midrule
@@ -568,11 +578,11 @@ Units & Unitless
         
 \\ \midrule
 Equation & \begin{displaymath}
-           \mathit{GTF}=\begin{cases}
-                        1, & g=\text{``AN''}\\
-                        4, & g=\text{``FT''}\\
-                        2, & g=\text{``HS''}
-                        \end{cases}
+           \resizeExpression{\mathit{GTF}=\begin{cases}
+                                          1, & g=\text{``AN''}\\
+                                          4, & g=\text{``FT''}\\
+                                          2, & g=\text{``HS''}
+                                          \end{cases}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -581,9 +591,7 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & AN is annealed glass.
-        
         FT is fully tempered glass.
-        
         HS is heat strengthened glass.
         
 \\ \midrule
@@ -614,7 +622,7 @@ Units & ${\text{m}}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           \mathit{SD}=\sqrt{{\mathit{SD}_{\text{x}}}^{2}+{\mathit{SD}_{\text{y}}}^{2}+{\mathit{SD}_{\text{z}}}^{2}}
+           \resizeExpression{\mathit{SD}=\sqrt{{\mathit{SD}_{\text{x}}}^{2}+{\mathit{SD}_{\text{y}}}^{2}+{\mathit{SD}_{\text{z}}}^{2}}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -651,7 +659,7 @@ Units & Unitless
         
 \\ \midrule
 Equation & \begin{displaymath}
-           \mathit{AR}=\frac{a}{b}
+           \resizeExpression{\mathit{AR}=\frac{a}{b}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -690,7 +698,7 @@ Units & ${\text{kg}}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           {w_{\mathit{TNT}}}=w\,\mathit{TNT}
+           \resizeExpression{{w_{\mathit{TNT}}}=w\,\mathit{TNT}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -726,7 +734,7 @@ Units & ${\text{Pa}}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           q=\mathit{interpY}\left(\text{``TSD.txt''},\mathit{SD},{w_{\mathit{TNT}}}\right)
+           \resizeExpression{q=\mathit{interpY}\left(\text{``TSD.txt''},\mathit{SD},{w_{\mathit{TNT}}}\right)}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -772,16 +780,15 @@ Output & $B$
          
 \\ \midrule
 Input Constraints & \begin{displaymath}
-                    a\gt{}0
-                    \end{displaymath}
-                    \begin{displaymath}
-                    0\lt{}b\leq{}a
-                    \end{displaymath}
+                    \resizeExpression{a\gt{}0}{0.8}
+                    \end{displaymath}\begin{displaymath}
+                                     \resizeExpression{0\lt{}b\leq{}a}{0.8}
+                                     \end{displaymath}
 \\ \midrule
 Output Constraints & 
 \\ \midrule
 Equation & \begin{displaymath}
-           B=\frac{k}{\left(a\,b\right)^{m-1}}\,\left(E\,h^{2}\right)^{m}\,\mathit{LDF}\,e^{J}
+           \resizeExpression{B=\frac{k}{\left(a\,b\right)^{m-1}}\,\left(E\,h^{2}\right)^{m}\,\mathit{LDF}\,e^{J}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -797,11 +804,8 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & $a$ and $b$ are the dimensions of the plate, where ($a\geq{}b$).
-        
         $h$ is defined in \hyperref[DD:minThick]{DD:minThick} and is based on the nominal thicknesses.
-        
         $\mathit{LDF}$ is defined in \hyperref[DD:loadDurFactor]{DD:loadDurFactor}.
-        
         $J$ is defined in \hyperref[IM:stressDistFac]{IM:stressDistFac}.
         
 \\ \midrule
@@ -832,15 +836,15 @@ Output & $J$
          
 \\ \midrule
 Input Constraints & \begin{displaymath}
-                    \mathit{AR}\geq{}1
+                    \resizeExpression{\mathit{AR}\geq{}1}{0.8}
                     \end{displaymath}
 \\ \midrule
 Output Constraints & \begin{displaymath}
-                     {J_{\text{min}}}\leq{}J\leq{}{J_{\text{max}}}
+                     \resizeExpression{{J_{\text{min}}}\leq{}J\leq{}{J_{\text{max}}}}{0.8}
                      \end{displaymath}
 \\ \midrule
 Equation & \begin{displaymath}
-           J=\mathit{interpZ}\left(\text{``SDF.txt''},\mathit{AR},\hat{q}\right)
+           \resizeExpression{J=\mathit{interpZ}\left(\text{``SDF.txt''},\mathit{AR},\hat{q}\right)}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -851,9 +855,7 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & $J$ is obtained by interpolating from data shown in \hyperref[Figure:dimlessloadVSaspect]{Fig:dimlessloadVSaspect}.
-        
         $\mathit{AR}$ is defined in \hyperref[DD:aspectRatio]{DD:aspectRatio}.
-        
         $\hat{q}$ is defined in \hyperref[IM:dimlessLoad]{IM:dimlessLoad}.
         
 \\ \midrule
@@ -884,16 +886,15 @@ Output & $\mathit{NFL}$
          
 \\ \midrule
 Input Constraints & \begin{displaymath}
-                    a\gt{}0
-                    \end{displaymath}
-                    \begin{displaymath}
-                    0\lt{}b\leq{}a
-                    \end{displaymath}
+                    \resizeExpression{a\gt{}0}{0.8}
+                    \end{displaymath}\begin{displaymath}
+                                     \resizeExpression{0\lt{}b\leq{}a}{0.8}
+                                     \end{displaymath}
 \\ \midrule
 Output Constraints & 
 \\ \midrule
 Equation & \begin{displaymath}
-           \mathit{NFL}=\frac{{\hat{q}_{\text{tol}}}\,E\,h^{4}}{\left(a\,b\right)^{2}}
+           \resizeExpression{\mathit{NFL}=\frac{{\hat{q}_{\text{tol}}}\,E\,h^{4}}{\left(a\,b\right)^{2}}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -906,11 +907,8 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & ${\hat{q}_{\text{tol}}}$ is defined in \hyperref[IM:tolLoad]{IM:tolLoad}.
-        
         $E$ comes from \hyperref[assumpSV]{A:standardValues}.
-        
         $h$ is defined in \hyperref[DD:minThick]{DD:minThick} and is based on the nominal thicknesses.
-        
         $a$ and $b$ are the dimensions of the plate, where ($a\geq{}b$).
         
 \\ \midrule
@@ -941,16 +939,15 @@ Output & $\hat{q}$
          
 \\ \midrule
 Input Constraints & \begin{displaymath}
-                    a\gt{}0
-                    \end{displaymath}
-                    \begin{displaymath}
-                    0\lt{}b\leq{}a
-                    \end{displaymath}
+                    \resizeExpression{a\gt{}0}{0.8}
+                    \end{displaymath}\begin{displaymath}
+                                     \resizeExpression{0\lt{}b\leq{}a}{0.8}
+                                     \end{displaymath}
 \\ \midrule
 Output Constraints & 
 \\ \midrule
 Equation & \begin{displaymath}
-           \hat{q}=\frac{q\,\left(a\,b\right)^{2}}{E\,h^{4}\,\mathit{GTF}}
+           \resizeExpression{\hat{q}=\frac{q\,\left(a\,b\right)^{2}}{E\,h^{4}\,\mathit{GTF}}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -964,13 +961,9 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & $q$ is the 3 second duration equivalent pressure, as given in \hyperref[DD:calofDemand]{DD:calofDemand}.
-        
         $a$ and $b$ are the dimensions of the plate, where ($a\geq{}b$).
-        
         $E$ comes from \hyperref[assumpSV]{A:standardValues}.
-        
         $h$ is defined in \hyperref[DD:minThick]{DD:minThick} and is based on the nominal thicknesses.
-        
         $\mathit{GTF}$ is defined in \hyperref[DD:gTF]{DD:gTF}.
         
 \\ \midrule
@@ -1001,13 +994,13 @@ Output & ${\hat{q}_{\text{tol}}}$
          
 \\ \midrule
 Input Constraints & \begin{displaymath}
-                    \mathit{AR}\geq{}1
+                    \resizeExpression{\mathit{AR}\geq{}1}{0.8}
                     \end{displaymath}
 \\ \midrule
 Output Constraints & 
 \\ \midrule
 Equation & \begin{displaymath}
-           {\hat{q}_{\text{tol}}}=\mathit{interpY}\left(\text{``SDF.txt''},\mathit{AR},{J_{\text{tol}}}\right)
+           \resizeExpression{{\hat{q}_{\text{tol}}}=\mathit{interpY}\left(\text{``SDF.txt''},\mathit{AR},{J_{\text{tol}}}\right)}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -1018,9 +1011,7 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & ${\hat{q}_{\text{tol}}}$ is obtained by interpolating from data shown in \hyperref[Figure:dimlessloadVSaspect]{Fig:dimlessloadVSaspect}.
-        
         $\mathit{AR}$ is defined in \hyperref[DD:aspectRatio]{DD:aspectRatio}.
-        
         ${J_{\text{tol}}}$ is defined in \hyperref[IM:sdfTol]{IM:sdfTol}.
         
 \\ \midrule
@@ -1051,19 +1042,17 @@ Output & ${J_{\text{tol}}}$
          
 \\ \midrule
 Input Constraints & \begin{displaymath}
-                    0\leq{}{P_{\text{b}\text{tol}}}\leq{}1
-                    \end{displaymath}
-                    \begin{displaymath}
-                    a\gt{}0
-                    \end{displaymath}
-                    \begin{displaymath}
-                    0\lt{}b\leq{}a
-                    \end{displaymath}
+                    \resizeExpression{0\leq{}{P_{\text{b}\text{tol}}}\leq{}1}{0.8}
+                    \end{displaymath}\begin{displaymath}
+                                     \resizeExpression{a\gt{}0}{0.8}
+                                     \end{displaymath}\begin{displaymath}
+                                                      \resizeExpression{0\lt{}b\leq{}a}{0.8}
+                                                      \end{displaymath}
 \\ \midrule
 Output Constraints & 
 \\ \midrule
 Equation & \begin{displaymath}
-           {J_{\text{tol}}}=\ln\left(\ln\left(\frac{1}{1-{P_{\text{b}\text{tol}}}}\right)\,\frac{\left(a\,b\right)^{m-1}}{k\,\left(E\,h^{2}\right)^{m}\,\mathit{LDF}}\right)
+           \resizeExpression{{J_{\text{tol}}}=\ln\left(\ln\left(\frac{1}{1-{P_{\text{b}\text{tol}}}}\right)\,\frac{\left(a\,b\right)^{m-1}}{k\,\left(E\,h^{2}\right)^{m}\,\mathit{LDF}}\right)}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -1079,13 +1068,9 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & ${P_{\text{b}\text{tol}}}$ is entered by the user.
-        
         $a$ and $b$ are the dimensions of the plate, where ($a\geq{}b$).
-        
         $m$, $k$, and $E$ come from \hyperref[assumpSV]{A:standardValues}.
-        
         $h$ is defined in \hyperref[DD:minThick]{DD:minThick} and is based on the nominal thicknesses.
-        
         $\mathit{LDF}$ is defined in \hyperref[DD:loadDurFactor]{DD:loadDurFactor}.
         
 \\ \midrule
@@ -1118,11 +1103,11 @@ Output & ${P_{\text{b}}}$
 Input Constraints & 
 \\ \midrule
 Output Constraints & \begin{displaymath}
-                     0\leq{}{P_{\text{b}}}\leq{}1
+                     \resizeExpression{0\leq{}{P_{\text{b}}}\leq{}1}{0.8}
                      \end{displaymath}
 \\ \midrule
 Equation & \begin{displaymath}
-           {P_{\text{b}}}=1-e^{-B}
+           \resizeExpression{{P_{\text{b}}}=1-e^{-B}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -1164,7 +1149,7 @@ Input Constraints &
 Output Constraints & 
 \\ \midrule
 Equation & \begin{displaymath}
-           \mathit{LR}=\mathit{NFL}\,\mathit{GTF}\,\mathit{LSF}
+           \resizeExpression{\mathit{LR}=\mathit{NFL}\,\mathit{GTF}\,\mathit{LSF}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -1175,9 +1160,7 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & $\mathit{LR}$ is also called capacity.
-        
         $\mathit{NFL}$ is defined in \hyperref[IM:nFL]{IM:nFL}.
-        
         $\mathit{GTF}$ is defined in \hyperref[DD:gTF]{DD:gTF}.
         
 \\ \midrule
@@ -1208,16 +1191,15 @@ Output & $\mathit{isSafePb}$
          
 \\ \midrule
 Input Constraints & \begin{displaymath}
-                    0\leq{}{P_{\text{b}}}\leq{}1
-                    \end{displaymath}
-                    \begin{displaymath}
-                    0\leq{}{P_{\text{b}\text{tol}}}\leq{}1
-                    \end{displaymath}
+                    \resizeExpression{0\leq{}{P_{\text{b}}}\leq{}1}{0.8}
+                    \end{displaymath}\begin{displaymath}
+                                     \resizeExpression{0\leq{}{P_{\text{b}\text{tol}}}\leq{}1}{0.8}
+                                     \end{displaymath}
 \\ \midrule
 Output Constraints & 
 \\ \midrule
 Equation & \begin{displaymath}
-           \mathit{isSafePb}={P_{\text{b}}}\lt{}{P_{\text{b}\text{tol}}}
+           \resizeExpression{\mathit{isSafePb}={P_{\text{b}}}\lt{}{P_{\text{b}\text{tol}}}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -1227,9 +1209,7 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & If $\mathit{isSafePb}$, the glass is considered safe. $\mathit{isSafePb}$ and $\mathit{isSafeLR}$ (from \hyperref[IM:isSafeLR]{IM:isSafeLR}) are either both True or both False.
-        
         ${P_{\text{b}}}$ is defined in \hyperref[IM:probOfBreak]{IM:probOfBreak}.
-        
         ${P_{\text{b}\text{tol}}}$ is entered by the user.
         
 \\ \midrule
@@ -1260,16 +1240,15 @@ Output & $\mathit{isSafeLR}$
          
 \\ \midrule
 Input Constraints & \begin{displaymath}
-                    \mathit{LR}\gt{}0
-                    \end{displaymath}
-                    \begin{displaymath}
-                    q\gt{}0
-                    \end{displaymath}
+                    \resizeExpression{\mathit{LR}\gt{}0}{0.8}
+                    \end{displaymath}\begin{displaymath}
+                                     \resizeExpression{q\gt{}0}{0.8}
+                                     \end{displaymath}
 \\ \midrule
 Output Constraints & 
 \\ \midrule
 Equation & \begin{displaymath}
-           \mathit{isSafeLR}=\mathit{LR}\gt{}q
+           \resizeExpression{\mathit{isSafeLR}=\mathit{LR}\gt{}q}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -1279,9 +1258,7 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & If $\mathit{isSafeLR}$, the glass is considered safe. $\mathit{isSafePb}$ (from \hyperref[IM:isSafePb]{IM:isSafePb}) and $\mathit{isSafeLR}$ are either both True or both False.
-        
         $\mathit{LR}$ is defined in \hyperref[IM:calofCapacity]{IM:calofCapacity} and is also called capacity.
-        
         $q$ is the 3 second duration equivalent pressure, as given in \hyperref[DD:calofDemand]{DD:calofDemand}.
         
 \\ \midrule

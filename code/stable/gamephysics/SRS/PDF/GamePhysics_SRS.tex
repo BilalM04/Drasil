@@ -15,6 +15,8 @@
 \usepackage{svg}
 \usepackage{float}
 \usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{calc}
 \usepackage{filecontents}
 \usepackage[backend=bibtex]{biblatex}
 \usepackage{url}
@@ -23,6 +25,15 @@
 \newcommand{\lt}{\ensuremath <}
 \newlist{symbDescription}{description}{1}
 \setlist[symbDescription]{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
+\newsavebox{\mybox}
+\newcommand{\resizeExpression}[2]{
+\savebox{\mybox}{$#1$}
+\ifdim\wd\mybox>#2\linewidth
+\resizebox{#2\textwidth}{!}{\usebox{\mybox}}
+\else
+\usebox{\mybox}
+\fi
+}
 \bibliography{bibfile}
 \title{Software Requirements Specification for GamePhysics}
 \author{Alex Halliwushka, Luthfi Mawarid, and Olu Owojaiye}
@@ -368,7 +379,7 @@ Label & Newton's second law of motion
         
 \\ \midrule
 Equation & \begin{displaymath}
-           \symbf{F}=m\,\symbf{a}\text{(}t\text{)}
+           \resizeExpression{\symbf{F}=m\,\symbf{a}\text{(}t\text{)}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -401,7 +412,7 @@ Label & Newton's third law of motion
         
 \\ \midrule
 Equation & \begin{displaymath}
-           {\symbf{F}_{1}}=-{\symbf{F}_{2}}
+           \resizeExpression{{\symbf{F}_{1}}=-{\symbf{F}_{2}}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -432,7 +443,7 @@ Label & Newton's law of universal gravitation
         
 \\ \midrule
 Equation & \begin{displaymath}
-           \symbf{F}=G\,\frac{{m_{1}}\,{m_{2}}}{\|\symbf{d}\|^{2}}\,\symbf{\hat{d}}=G\,\frac{{m_{1}}\,{m_{2}}}{\|\symbf{d}\|^{2}}\,\frac{\symbf{d}}{\|\symbf{d}\|}
+           \resizeExpression{\symbf{F}=G\,\frac{{m_{1}}\,{m_{2}}}{\|\symbf{d}\|^{2}}\,\symbf{\hat{d}}=G\,\frac{{m_{1}}\,{m_{2}}}{\|\symbf{d}\|^{2}}\,\frac{\symbf{d}}{\|\symbf{d}\|}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -469,7 +480,7 @@ Label & Newton's second law for rotational motion
         
 \\ \midrule
 Equation & \begin{displaymath}
-           \symbf{τ}=\symbf{I}\,α
+           \resizeExpression{\symbf{τ}=\symbf{I}\,α}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -479,7 +490,6 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & The net torque $\symbf{τ}$ on a rigid body is proportional to its angular acceleration $α$, where $\symbf{I}$ denotes the moment of inertia of the rigid body as the constant of proportionality.
-        
         We also assume that all rigid bodies involved are two-dimensional (from \hyperref[assumpOD]{A:objectDimension}).
         
 \\ \midrule
@@ -511,7 +521,7 @@ Units & $\frac{\text{m}}{\text{s}^{2}}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           \symbf{g}=-\frac{G\,M}{\|\symbf{d}\|^{2}}\,\symbf{\hat{d}}
+           \resizeExpression{\symbf{g}=-\frac{G\,M}{\|\symbf{d}\|^{2}}\,\symbf{\hat{d}}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -539,27 +549,27 @@ RefBy & \hyperref[IM:transMot]{IM:transMot}
 From \hyperref[TM:UniversalGravLaw]{Newton's law of universal gravitation}, we have:
 
 \begin{displaymath}
-\symbf{F}=\frac{G\,{m_{1}}\,{m_{2}}}{{\|\symbf{d}\|^{2}}}\,\symbf{\hat{d}}
+\resizeExpression{\symbf{F}=\frac{G\,{m_{1}}\,{m_{2}}}{{\|\symbf{d}\|^{2}}}\,\symbf{\hat{d}}}{1.0}
 \end{displaymath}
 The above equation governs the gravitational attraction between two bodies. Suppose that one of the bodies is significantly more massive than the other, so that we concern ourselves with the force the massive body exerts on the lighter body. Further, suppose that the Cartesian coordinate system is chosen such that this force acts on a line which lies along one of the principal axes. Then our unit vector directed from the center of the large mass to the center of the smaller mass $\symbf{\hat{d}}$ for the x or y axes is:
 
 \begin{displaymath}
-\symbf{\hat{d}}=\frac{\symbf{d}}{\|\symbf{d}\|}
+\resizeExpression{\symbf{\hat{d}}=\frac{\symbf{d}}{\|\symbf{d}\|}}{1.0}
 \end{displaymath}
 Given the above assumptions, let $M$ and $m$ be the mass of the massive and light body respectively. Equating $\symbf{F}$ above with Newton's second law for the force experienced by the light body, we get:
 
 \begin{displaymath}
-{\symbf{F}_{\symbf{g}}}=G\,\frac{M\,m}{{\|\symbf{d}\|^{2}}}\,\symbf{\hat{d}}=m\,\symbf{g}
+\resizeExpression{{\symbf{F}_{\symbf{g}}}=G\,\frac{M\,m}{{\|\symbf{d}\|^{2}}}\,\symbf{\hat{d}}=m\,\symbf{g}}{1.0}
 \end{displaymath}
 where $\symbf{g}$ is the gravitational acceleration. Dividing the above equation by $m$,  we have:
 
 \begin{displaymath}
-G\,\frac{M}{{\|\symbf{d}\|^{2}}}\,\symbf{\hat{d}}=\symbf{g}
+\resizeExpression{G\,\frac{M}{{\|\symbf{d}\|^{2}}}\,\symbf{\hat{d}}=\symbf{g}}{1.0}
 \end{displaymath}
 and thus the negative sign indicates that the force is an attractive force:
 
 \begin{displaymath}
-\symbf{g}=-G\,\frac{M}{{\|\symbf{d}\|^{2}}}\,\symbf{\hat{d}}
+\resizeExpression{\symbf{g}=-G\,\frac{M}{{\|\symbf{d}\|^{2}}}\,\symbf{\hat{d}}}{1.0}
 \end{displaymath}
 \medskip
 \noindent
@@ -576,7 +586,7 @@ Units & $\text{N}\text{s}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           j=\frac{-\left(1+{C_{\text{R}}}\right)\,{{\symbf{v}\text{(}t\text{)}_{\text{i}}}^{\text{A}\text{B}}}\cdot{}\symbf{n}}{\left(\frac{1}{{m_{\text{A}}}}+\frac{1}{{m_{\text{B}}}}\right)\,\|\symbf{n}\|^{2}+\frac{\|{\symbf{u}_{\text{A}\text{P}}}\text{*}\symbf{n}\|^{2}}{{\symbf{I}_{\text{A}}}}+\frac{\|{\symbf{u}_{\text{B}\text{P}}}\text{*}\symbf{n}\|^{2}}{{\symbf{I}_{\text{B}}}}}
+           \resizeExpression{j=\frac{-\left(1+{C_{\text{R}}}\right)\,{{\symbf{v}\text{(}t\text{)}_{\text{i}}}^{\text{A}\text{B}}}\cdot{}\symbf{n}}{\left(\frac{1}{{m_{\text{A}}}}+\frac{1}{{m_{\text{B}}}}\right)\,\|\symbf{n}\|^{2}+\frac{\|{\symbf{u}_{\text{A}\text{P}}}\text{*}\symbf{n}\|^{2}}{{\symbf{I}_{\text{A}}}}+\frac{\|{\symbf{u}_{\text{B}\text{P}}}\text{*}\symbf{n}\|^{2}}{{\symbf{I}_{\text{B}}}}}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -594,9 +604,7 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & All bodies are assumed to be rigid (from \hyperref[assumpOT]{A:objectTy}) and two-dimensional (from \hyperref[assumpOD]{A:objectDimension}).
-        
         A right-handed coordinate system is used (from \hyperref[assumpAD]{A:axesDefined}).
-        
         All collisions are vertex-to-edge (from \hyperref[assumpCT]{A:collisionType}).
         
 \\ \midrule
@@ -631,7 +639,7 @@ Units & ${\text{m}}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           {\symbf{p}\text{(}t\text{)}_{\text{CM}}}=\frac{\displaystyle\sum{{m_{j}}\,{\symbf{p}\text{(}t\text{)}_{j}}}}{{m_{T}}}
+           \resizeExpression{{\symbf{p}\text{(}t\text{)}_{\text{CM}}}=\frac{\displaystyle\sum{{m_{j}}\,{\symbf{p}\text{(}t\text{)}_{j}}}}{{m_{T}}}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -671,7 +679,7 @@ Units & ${\text{m}}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           u\text{(}t\text{)}=\frac{\,d\symbf{p}\text{(}t\text{)}\left(t\right)}{\,dt}
+           \resizeExpression{u\text{(}t\text{)}=\frac{\,d\symbf{p}\text{(}t\text{)}\left(t\right)}{\,dt}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -710,7 +718,7 @@ Units & $\frac{\text{m}}{\text{s}}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           v\text{(}t\text{)}=\frac{\,d\symbf{u}\left(t\right)}{\,dt}
+           \resizeExpression{v\text{(}t\text{)}=\frac{\,d\symbf{u}\left(t\right)}{\,dt}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -749,7 +757,7 @@ Units & $\frac{\text{m}}{\text{s}^{2}}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           a\text{(}t\text{)}=\frac{\,d\symbf{v}\text{(}t\text{)}\left(t\right)}{\,dt}
+           \resizeExpression{a\text{(}t\text{)}=\frac{\,d\symbf{v}\text{(}t\text{)}\left(t\right)}{\,dt}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -788,7 +796,7 @@ Units & ${\text{rad}}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           θ=\frac{\,dϕ\left(t\right)}{\,dt}
+           \resizeExpression{θ=\frac{\,dϕ\left(t\right)}{\,dt}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -827,7 +835,7 @@ Units & $\frac{\text{rad}}{\text{s}}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           ω=\frac{\,dθ\left(t\right)}{\,dt}
+           \resizeExpression{ω=\frac{\,dθ\left(t\right)}{\,dt}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -866,7 +874,7 @@ Units & $\frac{\text{rad}}{\text{s}^{2}}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           α=\frac{\,dω\left(t\right)}{\,dt}
+           \resizeExpression{α=\frac{\,dω\left(t\right)}{\,dt}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -905,7 +913,7 @@ Units & $\frac{\text{m}}{\text{s}}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           {\symbf{v}\text{(}t\text{)}_{\text{B}}}={\symbf{v}\text{(}t\text{)}_{\text{O}}}+ω\times{\symbf{u}_{\text{O}\text{B}}}
+           \resizeExpression{{\symbf{v}\text{(}t\text{)}_{\text{B}}}={\symbf{v}\text{(}t\text{)}_{\text{O}}}+ω\times{\symbf{u}_{\text{O}\text{B}}}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -916,7 +924,6 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & The linear velocity ${\symbf{v}\text{(}t\text{)}_{\text{B}}}$ of any point B in a rigid body is the sum of the linear velocity ${\symbf{v}\text{(}t\text{)}_{\text{O}}}$ of the rigid body at the origin (axis of rotation) and the resultant vector from the cross product of the rigid body's angular velocity $ω$ and the displacement vector between the origin and point B ${\symbf{u}_{\text{O}\text{B}}}$.
-        
         All bodies are assumed to be rigid (from \hyperref[assumpOT]{A:objectTy}).
         
 \\ \midrule
@@ -946,7 +953,7 @@ Units & $\text{N}\text{m}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           \symbf{τ}=\symbf{r}\times\symbf{F}
+           \resizeExpression{\symbf{τ}=\symbf{r}\times\symbf{F}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -984,7 +991,7 @@ Units & ${\text{J}}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           KE=m\,\frac{\|\symbf{v}\text{(}t\text{)}\|^{2}}{2}
+           \resizeExpression{KE=m\,\frac{\|\symbf{v}\text{(}t\text{)}\|^{2}}{2}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -994,9 +1001,7 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & Kinetic energy is the measure of the energy a body possesses due to its motion.
-        
         All bodies are assumed to be rigid (from \hyperref[assumpOT]{A:objectTy}) and two-dimensional (from \hyperref[assumpOD]{A:objectDimension}).
-        
         No damping occurs during the simulation (from \hyperref[assumpDI]{A:dampingInvolvement}).
         
 \\ \midrule
@@ -1026,7 +1031,7 @@ Units & Unitless
         
 \\ \midrule
 Equation & \begin{displaymath}
-           {C_{\text{R}}}=-\left(\frac{{{\symbf{v}\text{(}t\text{)}_{\text{f}}}^{\text{A}\text{B}}}\cdot{}\symbf{n}}{{{\symbf{v}\text{(}t\text{)}_{\text{i}}}^{\text{A}\text{B}}}\cdot{}\symbf{n}}\right)
+           \resizeExpression{{C_{\text{R}}}=-\left(\frac{{{\symbf{v}\text{(}t\text{)}_{\text{f}}}^{\text{A}\text{B}}}\cdot{}\symbf{n}}{{{\symbf{v}\text{(}t\text{)}_{\text{i}}}^{\text{A}\text{B}}}\cdot{}\symbf{n}}\right)}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -1065,7 +1070,7 @@ Units & $\frac{\text{m}}{\text{s}}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           {{\symbf{v}\text{(}t\text{)}_{\text{i}}}^{\text{A}\text{B}}}={\symbf{v}\text{(}t\text{)}^{\text{A}\text{P}}}-{\symbf{v}\text{(}t\text{)}^{\text{B}\text{P}}}
+           \resizeExpression{{{\symbf{v}\text{(}t\text{)}_{\text{i}}}^{\text{A}\text{B}}}={\symbf{v}\text{(}t\text{)}^{\text{A}\text{P}}}-{\symbf{v}\text{(}t\text{)}^{\text{B}\text{P}}}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -1075,7 +1080,6 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & In a collision, the velocity of a rigid body A colliding with another rigid body B relative to that body ${{\symbf{v}\text{(}t\text{)}_{\text{i}}}^{\text{A}\text{B}}}$ is the difference between the velocities of A and B at point P.
-        
         All bodies are assumed to be rigid (from \hyperref[assumpOT]{A:objectTy}).
         
 \\ \midrule
@@ -1105,7 +1109,7 @@ Units & $\text{N}\text{s}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           \symbf{J}=m\,Δ\symbf{v}
+           \resizeExpression{\symbf{J}=m\,Δ\symbf{v}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -1115,7 +1119,6 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & An impulse (vector) $\symbf{J}$ occurs when a force $\symbf{F}$ acts over a body over an interval of time.
-        
         All bodies are assumed to be rigid (from \hyperref[assumpOT]{A:objectTy}).
         
 \\ \midrule
@@ -1132,17 +1135,17 @@ RefBy &
 Newton's second law of motion states:
 
 \begin{displaymath}
-\symbf{F}=m\,\symbf{a}\text{(}t\text{)}=m\,\frac{\,d\symbf{v}\text{(}t\text{)}}{\,dt}
+\resizeExpression{\symbf{F}=m\,\symbf{a}\text{(}t\text{)}=m\,\frac{\,d\symbf{v}\text{(}t\text{)}}{\,dt}}{1.0}
 \end{displaymath}
 Rearranging:
 
 \begin{displaymath}
-\int_{{t_{1}}}^{{t_{2}}}{\symbf{F}}\,dt=m\,\left(\int_{{\symbf{v}\text{(}t\text{)}_{1}}}^{{\symbf{v}\text{(}t\text{)}_{2}}}{1}\,d\symbf{v}\text{(}t\text{)}\right)
+\resizeExpression{\int_{{t_{1}}}^{{t_{2}}}{\symbf{F}}\,dt=m\,\left(\int_{{\symbf{v}\text{(}t\text{)}_{1}}}^{{\symbf{v}\text{(}t\text{)}_{2}}}{1}\,d\symbf{v}\text{(}t\text{)}\right)}{1.0}
 \end{displaymath}
 Integrating the right hand side:
 
 \begin{displaymath}
-\int_{{t_{1}}}^{{t_{2}}}{\symbf{F}}\,dt=m\,{\symbf{v}\text{(}t\text{)}_{2}}-m\,{\symbf{v}\text{(}t\text{)}_{1}}=m\,Δ\symbf{v}
+\resizeExpression{\int_{{t_{1}}}^{{t_{2}}}{\symbf{F}}\,dt=m\,{\symbf{v}\text{(}t\text{)}_{2}}-m\,{\symbf{v}\text{(}t\text{)}_{1}}=m\,Δ\symbf{v}}{1.0}
 \end{displaymath}
 \medskip
 \noindent
@@ -1162,7 +1165,7 @@ Units & ${\text{J}}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           PE=m\,\symbf{g}\,h
+           \resizeExpression{PE=m\,\symbf{g}\,h}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -1173,9 +1176,7 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & The potential energy of an object is the energy held by an object because of its position to other objects.
-        
         All bodies are assumed to be rigid (from \hyperref[assumpOT]{A:objectTy}) and two-dimensional (from \hyperref[assumpOD]{A:objectDimension}).
-        
         No damping occurs during the simulation (from \hyperref[assumpDI]{A:dampingInvolvement}).
         
 \\ \midrule
@@ -1205,7 +1206,7 @@ Units & $\text{kg}\text{m}^{2}$
         
 \\ \midrule
 Equation & \begin{displaymath}
-           \symbf{I}=\displaystyle\sum{{m_{j}}\,{d_{j}}^{2}}
+           \resizeExpression{\symbf{I}=\displaystyle\sum{{m_{j}}\,{d_{j}}^{2}}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -1215,7 +1216,6 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & The moment of inertia $\symbf{I}$ of a body measures how much torque is needed for the body to achieve angular acceleration about the axis of rotation.
-        
         All bodies are assumed to be rigid (from \hyperref[assumpOT]{A:objectTy}).
         
 \\ \midrule
@@ -1251,25 +1251,21 @@ Output & ${\symbf{a}\text{(}t\text{)}_{j}}$
          
 \\ \midrule
 Input Constraints & \begin{displaymath}
-                    {\symbf{v}\text{(}t\text{)}_{j}}\gt{}0
-                    \end{displaymath}
-                    \begin{displaymath}
-                    t\gt{}0
-                    \end{displaymath}
-                    \begin{displaymath}
-                    \symbf{g}\gt{}0
-                    \end{displaymath}
-                    \begin{displaymath}
-                    {\symbf{F}_{j}}\gt{}0
-                    \end{displaymath}
-                    \begin{displaymath}
-                    {m_{j}}\gt{}0
-                    \end{displaymath}
+                    \resizeExpression{{\symbf{v}\text{(}t\text{)}_{j}}\gt{}0}{0.8}
+                    \end{displaymath}\begin{displaymath}
+                                     \resizeExpression{t\gt{}0}{0.8}
+                                     \end{displaymath}\begin{displaymath}
+                                                      \resizeExpression{\symbf{g}\gt{}0}{0.8}
+                                                      \end{displaymath}\begin{displaymath}
+                                                                       \resizeExpression{{\symbf{F}_{j}}\gt{}0}{0.8}
+                                                                       \end{displaymath}\begin{displaymath}
+                                                                                        \resizeExpression{{m_{j}}\gt{}0}{0.8}
+                                                                                        \end{displaymath}
 \\ \midrule
 Output Constraints & 
 \\ \midrule
 Equation & \begin{displaymath}
-           {\symbf{a}\text{(}t\text{)}_{j}}=\symbf{g}+\frac{{\symbf{F}_{j}}\left(t\right)}{{m_{j}}}
+           \resizeExpression{{\symbf{a}\text{(}t\text{)}_{j}}=\symbf{g}+\frac{{\symbf{F}_{j}}\left(t\right)}{{m_{j}}}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -1281,11 +1277,8 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & The above equation expresses the total acceleration of the rigid body $j$ as the sum of gravitational acceleration (from \hyperref[GD:accelGravity]{GD:accelGravity}) and acceleration due to applied force ${\symbf{F}_{j}}\left(t\right)$ (from \hyperref[TM:NewtonSecLawMot]{TM:NewtonSecLawMot}). The resultant outputs are then obtained from this equation using \hyperref[DD:linDisp]{DD:linDisp}, \hyperref[DD:linVel]{DD:linVel}, and \hyperref[DD:linAcc]{DD:linAcc}.
-        
         The output of the instance model will be the functions of position and velocity over time that satisfy the ODE for the acceleration, with the given initial conditions for position and velocity. The motion is translational, so the position and velocity functions are for the centre of mass (from \hyperref[DD:ctrOfMass]{DD:ctrOfMass}).
-        
         All bodies are assumed to be rigid (from \hyperref[assumpOT]{A:objectTy}) and two-dimensional (from \hyperref[assumpOD]{A:objectDimension}).
-        
         It is currently assumed that no damping occurs during the simulation (from \hyperref[assumpDI]{A:dampingInvolvement}) and that no constraints are involved (from \hyperref[assumpCAJI]{A:constraintsAndJointsInvolvement}).
         
 \\ \midrule
@@ -1302,12 +1295,12 @@ RefBy &
 We may calculate the total acceleration of rigid body $j$ by calculating the derivative of it's velocity with respect to time (from \hyperref[DD:linAcc]{DD:linAcc}).
 
 \begin{displaymath}
-{α_{j}}=\frac{\,d{\symbf{v}\text{(}t\text{)}_{j}}\left(t\right)}{\,dt}
+\resizeExpression{{α_{j}}=\frac{\,d{\symbf{v}\text{(}t\text{)}_{j}}\left(t\right)}{\,dt}}{1.0}
 \end{displaymath}
 Performing the derivative, we obtain:
 
 \begin{displaymath}
-{\symbf{a}\text{(}t\text{)}_{j}}=\symbf{g}+\frac{{\symbf{F}_{j}}\left(t\right)}{{m_{j}}}
+\resizeExpression{{\symbf{a}\text{(}t\text{)}_{j}}=\symbf{g}+\frac{{\symbf{F}_{j}}\left(t\right)}{{m_{j}}}}{1.0}
 \end{displaymath}
 \medskip
 \noindent
@@ -1327,24 +1320,21 @@ Output & ${α_{j}}$
          
 \\ \midrule
 Input Constraints & \begin{displaymath}
-                    ω\gt{}0
-                    \end{displaymath}
-                    \begin{displaymath}
-                    t\gt{}0
-                    \end{displaymath}
-                    \begin{displaymath}
-                    {\symbf{τ}_{j}}\gt{}0
-                    \end{displaymath}
-                    \begin{displaymath}
-                    \symbf{I}\gt{}0
-                    \end{displaymath}
+                    \resizeExpression{ω\gt{}0}{0.8}
+                    \end{displaymath}\begin{displaymath}
+                                     \resizeExpression{t\gt{}0}{0.8}
+                                     \end{displaymath}\begin{displaymath}
+                                                      \resizeExpression{{\symbf{τ}_{j}}\gt{}0}{0.8}
+                                                      \end{displaymath}\begin{displaymath}
+                                                                       \resizeExpression{\symbf{I}\gt{}0}{0.8}
+                                                                       \end{displaymath}
 \\ \midrule
 Output Constraints & \begin{displaymath}
-                     {α_{j}}\gt{}0
+                     \resizeExpression{{α_{j}}\gt{}0}{0.8}
                      \end{displaymath}
 \\ \midrule
 Equation & \begin{displaymath}
-           {α_{j}}=\frac{{\symbf{τ}_{j}}\left(t\right)}{\symbf{I}}
+           \resizeExpression{{α_{j}}=\frac{{\symbf{τ}_{j}}\left(t\right)}{\symbf{I}}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -1355,9 +1345,7 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & The above equation for the total angular acceleration of the rigid body $j$ is derived from \hyperref[TM:NewtonSecLawRotMot]{TM:NewtonSecLawRotMot}, and the resultant outputs are then obtained from this equation using \hyperref[DD:angDisp]{DD:angDisp}, \hyperref[DD:angVel]{DD:angVel}, and \hyperref[DD:angAccel]{DD:angAccel}.
-        
         All bodies are assumed to be rigid (from \hyperref[assumpOT]{A:objectTy}) and two-dimensional (from \hyperref[assumpOD]{A:objectDimension}).
-        
         A right-handed coordinate system is used (from \hyperref[assumpAD]{A:axesDefined}).
         
 \\ \midrule
@@ -1374,12 +1362,12 @@ RefBy &
 We may calculate the total angular acceleration of rigid body $j$ by calculating the derivative of its angular velocity with respect to time (from \hyperref[DD:angAccel]{DD:angAccel}).
 
 \begin{displaymath}
-{α_{j}}=\frac{\,dω\left(t\right)}{\,dt}
+\resizeExpression{{α_{j}}=\frac{\,dω\left(t\right)}{\,dt}}{1.0}
 \end{displaymath}
 Performing the derivative, we obtain:
 
 \begin{displaymath}
-{α_{j}}=\frac{{\symbf{τ}_{j}}\left(t\right)}{\symbf{I}}
+\resizeExpression{{α_{j}}=\frac{{\symbf{τ}_{j}}\left(t\right)}{\symbf{I}}}{1.0}
 \end{displaymath}
 \medskip
 \noindent
@@ -1399,24 +1387,21 @@ Output & ${t_{\text{c}}}$
          
 \\ \midrule
 Input Constraints & \begin{displaymath}
-                    t\gt{}0
-                    \end{displaymath}
-                    \begin{displaymath}
-                    j\gt{}0
-                    \end{displaymath}
-                    \begin{displaymath}
-                    {m_{\text{A}}}\gt{}0
-                    \end{displaymath}
-                    \begin{displaymath}
-                    \symbf{n}\gt{}0
-                    \end{displaymath}
+                    \resizeExpression{t\gt{}0}{0.8}
+                    \end{displaymath}\begin{displaymath}
+                                     \resizeExpression{j\gt{}0}{0.8}
+                                     \end{displaymath}\begin{displaymath}
+                                                      \resizeExpression{{m_{\text{A}}}\gt{}0}{0.8}
+                                                      \end{displaymath}\begin{displaymath}
+                                                                       \resizeExpression{\symbf{n}\gt{}0}{0.8}
+                                                                       \end{displaymath}
 \\ \midrule
 Output Constraints & \begin{displaymath}
-                     {t_{\text{c}}}\gt{}0
+                     \resizeExpression{{t_{\text{c}}}\gt{}0}{0.8}
                      \end{displaymath}
 \\ \midrule
 Equation & \begin{displaymath}
-           {\symbf{v}\text{(}t\text{)}_{\text{A}}}\left({t_{\text{c}}}\right)={\symbf{v}\text{(}t\text{)}_{\text{A}}}\left(t\right)+\frac{j}{{m_{\text{A}}}}\,\symbf{n}
+           \resizeExpression{{\symbf{v}\text{(}t\text{)}_{\text{A}}}\left({t_{\text{c}}}\right)={\symbf{v}\text{(}t\text{)}_{\text{A}}}\left(t\right)+\frac{j}{{m_{\text{A}}}}\,\symbf{n}}{0.8}
            \end{displaymath}
 \\ \midrule
 Description & \begin{symbDescription}
@@ -1429,15 +1414,10 @@ Description & \begin{symbDescription}
               \end{symbDescription}
 \\ \midrule
 Notes & The output of the instance model will be the functions of position, velocity, orientation, and angular acceleration over time that satisfy the equations for the velocity and angular acceleration, with the given initial conditions for position, velocity, orientation, and angular acceleration. The motion is translational, so the position, velocity, orientation, and angular acceleration functions are for the centre of mass (from \hyperref[DD:ctrOfMass]{DD:ctrOfMass}).
-        
         All bodies are assumed to be rigid (from \hyperref[assumpOT]{A:objectTy}) and two-dimensional (from \hyperref[assumpOD]{A:objectDimension}).
-        
         A right-handed coordinate system is used (from \hyperref[assumpAD]{A:axesDefined}).
-        
         All collisions are vertex-to-edge (from \hyperref[assumpCT]{A:collisionType}).
-        
         It is currently assumed that no damping occurs during the simulation (from \hyperref[assumpDI]{A:dampingInvolvement}) and that no constraints are involved (from \hyperref[assumpCAJI]{A:constraintsAndJointsInvolvement}).
-        
         $j$ is defined in \hyperref[GD:impulse]{GD:impulse}
         
 \\ \midrule
