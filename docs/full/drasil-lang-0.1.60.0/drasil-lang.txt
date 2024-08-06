@@ -295,7 +295,7 @@ data UID
 class HasUID c
 
 -- | Provides a <i>unique</i> id for internal Drasil use.
-uid :: HasUID c => Lens' c UID
+uid :: HasUID c => Getter c UID
 
 -- | Smart constructor for making a <a>UID</a> from a <a>Value</a>.
 mkUid :: String -> UID
@@ -406,12 +406,12 @@ Full :: Username -> Password -> Host -> Port -> Authority
 
 -- | Simplify for when authentication isn't necessary.
 Simple :: Host -> Port -> Authority
-type Path = String " Type the full path excluding the first /."
-type Query = [String] " Make sure [] doesn't print a "?". Separate elements with "&"."
-type Fragment = String " Make sure "" becomes "" not "#" when printing."
-type Username = String " Again make sure "" doesn't print anything."
-type Password = String " Don't print anything if "" or if Username=""."
-type Host = String " Type the host address (ex. "www.github.com")."
+type Path = -- | Type the full path excluding the first /. String
+type Query = -- | Make sure [] doesn't print a "?". -- Separate elements with "&". [String]
+type Fragment = -- | Make sure "" becomes "" not "#" when printing. String
+type Username = -- | Again make sure "" doesn't print anything. String
+type Password = -- | Don't print anything if "" or if Username="". String
+type Host = -- | Type the host address (ex. "www.github.com"). String
 data Port
 
 -- | Take an integer port number if applicable.
@@ -3582,9 +3582,9 @@ apply :: (ExprC r, HasUID f, HasSymbol f) => f -> [r] -> r
 -- | Create an <a>Expr</a> from a <a>Symbol</a>ic Chunk.
 sy :: (ExprC r, HasUID c, HasSymbol c) => c -> r
 infixr 4 $=
-infixr 9 $&&
 infixl 7 $/
 infixr 8 $^
+infixr 9 $&&
 infixr 9 $||
 
 -- | Smart constructor for fractions.
@@ -3661,7 +3661,7 @@ Numeric :: [(ItemType, Maybe String)] -> ListType
 -- | Simple list with items denoted by <tt>:</tt>. Renders as "Title: Item"
 Simple :: [ListTuple] -> ListType
 
--- | Descriptive list, renders as "<b>Title: Item</b>" (see
+-- | Descriptive list, renders as "<b>Title</b>: Item" (see
 --   <a>ListTuple</a>).
 Desc :: [ListTuple] -> ListType
 
@@ -3683,13 +3683,13 @@ Nested :: Header -> ListType -> ItemType
 type MaxWidthPercent = Float
 type Title = Sentence
 type Author = Sentence
-type Header = Sentence " Used when creating sublists."
+type Header = -- | Used when creating sublists. Sentence
 type Depth = Int
 type Width = Float
 type Height = Float
-type ListTuple = (Title, ItemType, Maybe String) " Formats as Title: Item. For use in lists."
+type ListTuple = -- | Formats as Title: Item. For use in lists. (Title, ItemType, Maybe String)
 type Filepath = String
-type Lbl = Sentence " Label."
+type Lbl = -- | Label. Sentence
 
 -- | Contents may be labelled or unlabelled.
 data Contents
@@ -4981,10 +4981,6 @@ data RelationConcept
 -- | Create a <a>RelationConcept</a> from a given <tt>UID</tt>, term
 --   (<a>NP</a>), definition (<a>Sentence</a>), and <tt>Relation</tt>.
 makeRC :: Express e => String -> NP -> Sentence -> e -> RelationConcept
-
--- | Create a new <a>RelationConcept</a> from an old <a>Concept</a>. Takes
---   a <a>Concept</a>, new <tt>UID</tt> and relation.
-addRelToCC :: (Express e, Concept c) => c -> String -> e -> RelationConcept
 instance Language.Drasil.UID.HasUID Language.Drasil.Chunk.Relation.RelationConcept
 instance GHC.Classes.Eq Language.Drasil.Chunk.Relation.RelationConcept
 instance Language.Drasil.Chunk.NamedIdea.NamedIdea Language.Drasil.Chunk.Relation.RelationConcept
@@ -5894,9 +5890,9 @@ apply :: (ExprC r, HasUID f, HasSymbol f) => f -> [r] -> r
 -- | Create an <a>Expr</a> from a <a>Symbol</a>ic Chunk.
 sy :: (ExprC r, HasUID c, HasSymbol c) => c -> r
 infixr 4 $=
-infixr 9 $&&
 infixl 7 $/
 infixr 8 $^
+infixr 9 $&&
 infixr 9 $||
 class LiteralC r
 int :: LiteralC r => Integer -> r
@@ -6381,9 +6377,9 @@ apply :: (ExprC r, HasUID f, HasSymbol f) => f -> [r] -> r
 -- | Create an <a>Expr</a> from a <a>Symbol</a>ic Chunk.
 sy :: (ExprC r, HasUID c, HasSymbol c) => c -> r
 infixr 4 $=
-infixr 9 $&&
 infixl 7 $/
 infixr 8 $^
+infixr 9 $&&
 infixr 9 $||
 
 -- | Smart constructor for fractions.
@@ -6541,7 +6537,7 @@ special :: RenderSpecial r => Special -> r
 class HasUID c
 
 -- | Provides a <i>unique</i> id for internal Drasil use.
-uid :: HasUID c => Lens' c UID
+uid :: HasUID c => Getter c UID
 
 -- | A HasSymbol is anything which has a <a>Symbol</a>.
 class HasSymbol c
@@ -6867,10 +6863,6 @@ data RelationConcept
 -- | Create a <a>RelationConcept</a> from a given <tt>UID</tt>, term
 --   (<a>NP</a>), definition (<a>Sentence</a>), and <tt>Relation</tt>.
 makeRC :: Express e => String -> NP -> Sentence -> e -> RelationConcept
-
--- | Create a new <a>RelationConcept</a> from an old <a>Concept</a>. Takes
---   a <a>Concept</a>, new <tt>UID</tt> and relation.
-addRelToCC :: (Express e, Concept c) => c -> String -> e -> RelationConcept
 
 -- | Describe the structural content of a system of linear ODEs with six
 --   necessary fields
@@ -8320,7 +8312,7 @@ Numeric :: [(ItemType, Maybe String)] -> ListType
 -- | Simple list with items denoted by <tt>:</tt>. Renders as "Title: Item"
 Simple :: [ListTuple] -> ListType
 
--- | Descriptive list, renders as "<b>Title: Item</b>" (see
+-- | Descriptive list, renders as "<b>Title</b>: Item" (see
 --   <a>ListTuple</a>).
 Desc :: [ListTuple] -> ListType
 
@@ -8335,7 +8327,7 @@ Flat :: Sentence -> ItemType
 
 -- | Nest a list (<a>ListType</a>) as an item.
 Nested :: Header -> ListType -> ItemType
-type ListTuple = (Title, ItemType, Maybe String) " Formats as Title: Item. For use in lists."
+type ListTuple = -- | Formats as Title: Item. For use in lists. (Title, ItemType, Maybe String)
 
 -- | Contains a <a>Reference</a> and <a>RawContent</a>.
 data LabelledContent
